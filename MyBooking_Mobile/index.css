@@ -1,0 +1,148 @@
+
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+body {
+    width: 100vw;
+    font-family: Poppins;
+    overflow-x: hidden; 
+}
+
+#gap {
+    height: 5vh;
+}
+
+#gap-s {
+    height: 3vh;
+}
+
+#header {
+    width: 100vw;
+    height: 9vh;
+    color: black;
+}
+
+#header #backmenu {
+    height: 9vh;
+    width: 10vh;
+    display: none;
+    text-align: center;
+}
+
+#header #backmenu i{
+    color: black;
+    line-height: 9vh;
+    width: 10vh;
+    font-size: x-large;
+} 
+
+#header #menu {
+    height: 9vh;
+    float: right;
+    text-align: center;
+}
+
+#header #logo_holder {
+    height: 9vh;
+    line-height: 9vh;
+    display: -webkit-inline-box;
+    width: 70vw;
+    text-align: center;
+}
+
+#brandname {
+    line-height: 9vh;
+    font-size: larger;
+    padding-left: 7px;
+}
+
+#header #logo_holder img {
+    height: 5vh;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    margin-left: 5vw;
+}
+
+#header #menu i {
+    color: black;
+    line-height: 9vh;
+    width: 10vh;
+    font-size: x-large;
+}
+.booking{
+    margin-left: 20px;
+    padding-bottom: 10px;
+    font-size: larger;
+}
+.rides{
+    margin-left: 20px;
+    color: gray;
+}
+.container1{
+    background-color: #D9D9D9;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 15px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+    display: flex;
+}
+.clock_img{
+    height: 3vh;
+}
+.time{
+    margin-left: 45%;
+    padding-right: 10px;
+}
+.container2{
+    background-color: #F1F1F1;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+.container02{
+    display: flex;
+}
+.car{
+    height: 9vh;
+}
+.route{
+    padding-left: 10px;
+}
+.date_time{
+    font-size: small;
+    padding-left: 10px;
+}
+.km{
+    font-size: small;
+    padding-left: 10px;
+}
+.more{
+    font-size: x-small;
+    margin-top: 10px;
+    text-align: right;
+    margin-right: 15px;
+}
+.time1{
+    margin-left: 34%;
+    padding-right: 10px;
+}
+.ride{
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+.time2{
+    color: #FFBF11;
+    margin-left: 46%;
+    padding-right: 10px;
+}

@@ -1,0 +1,722 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" type="image/svg+xml" href="assets/sports-car.png">
+  <meta name="theme-color" content="#fecb10">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="../cab-booking/css/onboarding.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.2/moment.min.js"></script>
+  <title>Gadigoda - Book Cabs Now.</title>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+<!-- (Optional) Latest compiled and minified JavaScript translation files -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/i18n/defaults-*.min.js"></script>
+
+  <script src="../cab-booking/js/index.js"></script>
+  <script src="../cab-booking/js/cities.js"></script>
+  <script src="../cab-booking/js/onboarding.js"></script>
+
+</head>
+
+<body>
+
+  <div id="header">
+    <div id="backmenu">
+      <i class="fas fa-arrow-left"></i>
+    </div>
+    <div id="logo_holder">
+      <img class="img-fluid" src="../cab-booking/assets/sports-car.svg">
+      <div id="brandname">Gadigoda.com</div>
+    </div>
+    <div id="menu">
+      <i onclick="call_main_menu()" class="fas fa-bars"></i>
+    </div>
+  </div>
+
+  <div id="content_holder">
+    <div id="gap"></div>
+    <div id="mobile_number_layout" style="display: none;">
+      <div id="header_label">
+        <p>Enter<br>Mobile Number</p>
+      </div>
+
+      <div class="input-group" id="mobile_number_input_layout">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="country_code">+91</span>
+        </div>
+        <input type="tel" id="mobile_number" maxlength="10" class="form-control" placeholder="10 Digit Mobile Number"
+          aria-label="mobile_number" aria-describedby="country_code">
+      </div>
+
+      <div>
+        <div id="submit_number" onclick="submit_mobile_number()">SEND OTP 2</div>
+      </div>
+    </div>
+
+    <div id="otp_number_layout" style="display: none;">
+      <div id="header_label">
+        <p>Verify<br>Mobile Number</p>
+      </div>
+
+      <div class="input-group" id="otp_input_layout">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="otp_label">OTP</span>
+        </div>
+        <input type="tel" id="otp" class="form-control" maxlength="6" placeholder="Enter 6 Digit OTP"
+          aria-label="mobile_number" aria-describedby="country_code">
+      </div>
+
+      <div>
+        <div id="submit_otp" onclick="submit_otp()">CONFIRM OTP</div>
+      </div>
+    </div>
+
+    <div id="new_account_layout">
+      <div id="header_label">
+        <p id="new_account_label">पिक उप का स्टेशन चुने |</p>
+        <div id="new_account_sub_label">Rail to Road / Road to Rail.</div>
+      </div>
+
+      <div id="station_selection">
+        <div id="gap-s"></div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" onclick="station_selected('Falna, Rajasthan')">Falna, Rajasthan</li>
+          <li class="list-group-item" onclick="station_selected('Abu Road, Rajasthan')">Abu Road, Rajasthan</li>
+          <li class="list-group-item" onclick="station_selected('Pindwada, Rajasthan')">Pindwada, Rajasthan</li>
+          <li class="list-group-item" onclick="station_selected('Jawai Bandh, Rajasthan')">Jawai Bandh, Rajasthan</li>
+          <li class="list-group-item" onclick="station_selected('Rani, Rajasthan')">Rani, Rajasthan</li>
+          <li class="list-group-item" onclick="station_selected('Someshwar, Rajasthan')">Someshwar, Rajasthan</li>
+          <li class="list-group-item" onclick="station_selected('Marwar Jn, Rajasthan')">Marwar Jn, Rajasthan</li>
+          <li class="list-group-item" onclick="station_selected('Luni, Rajasthan')">Luni, Rajasthan</li>
+          <li class="list-group-item" onclick="station_selected('Balotra, Rajasthan')">Balotra, Rajasthan</li>
+          <li class="list-group-item" onclick="station_selected('Nathudwara, Rajasthan')">Nathudwara, Rajasthan</li>
+          <li class="list-group-item" onclick="station_selected('Ajmer, Rajasthan')">Ajmer, Rajasthan</li>
+          <li class="list-group-item" onclick="station_selected('Other')" style="font-weight: bold;">Other [ Add New
+            Station]</li>
+        </ul>
+      </div>
+
+      <div id="account_type_layout" style="display: none;">
+        <div id="gap-s"></div>
+        <ul class="list-group list-group-flush" id="select-station-type">
+          <li class="list-group-item" onclick="select_station_pickup()">
+            <div style="display: inline-flex;">
+              <i class="fa-solid fa-location-pin"></i>
+              <div>स्टेशन से पिक उप करे</div>
+              <div>&nbsp;&nbsp;&nbsp;></div>
+            </div>
+          </li>
+          <li class="list-group-item" onclick="select_station_pickup()">स्टेशन पर ड्रॉप करे &nbsp;&nbsp;&nbsp; ></li>
+        </ul>
+      </div>
+
+
+      <div id="account_details_layout" style="display: none;">
+        <div id="gap-s"></div>
+        <div style="display: none;">
+
+          <div class="input-group" id="name_input_layout">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="name_label">Name</span>
+            </div>
+            <input type="text" id="name" class="form-control" placeholder="Enter Full Name" aria-label="name_label"
+              aria-describedby="name_label">
+          </div>
+          <div style="height: 1vh;"></div>
+          <div class="input-group" id="name_input_layout">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="name_label">Email</span>
+            </div>
+            <input type="email" id="email" class="form-control" placeholder="Enter Email Address"
+              aria-label="name_label" aria-describedby="name_label">
+          </div>
+
+          <div style="height: 1vh;"></div>
+          <div class="input-group" style="display: none;" id="name_input_layout">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="aadhar_label">Aadhar</span>
+            </div>
+            <input type="text" id="aadhar" class="form-control" placeholder="Enter Aadhar Number"
+              aria-label="aadhar_label" aria-describedby="aadhar_label">
+          </div>
+
+          <div style="height: 1vh;"></div>
+          <div style="height: 1vh;"></div>
+
+          <label class="form-label" for="customFile">Upload Aadhar Card Photo</label>
+          <input type="file" class="form-control" id="customFile" />
+
+          <div>
+            <div id="submit_profile" onclick="profile_submitted()">ADD CAR DETAILS</div>
+          </div>
+
+        </div>
+        <ul class="list-group list-group-flush" id="date_selection_list">
+
+        </ul>
+      </div>
+
+      <div id="time_selection_list_layout" style="display: none;">
+        <div id="gap-s"></div>
+
+        <ul class="list-group list-group-flush" id="time_selection_list">
+
+        </ul>
+      </div>
+
+
+      <div id="select_car_model" style="display: none;">
+        <div id="gap-s"></div>
+        <div id="plans_holder">
+          <ul id="plan_holder_list" class="list-group list-group-horizontal" style="width: 80vw;overflow-x: scroll;">
+
+          </ul>
+        </div>
+        <div id="car_holder" style="display: none;">
+          <div id="plan_Selected_label" style="padding-left: 30px;
+          font-size: larger;
+          font-weight: bold;">Select Plan</div>
+
+          <div id="plan_Selected_description_label"
+            style="padding-left: 30px;font-size: medium;padding-right: 30px;color: gray;margin-bottom: 10px;">Select
+            Plan</div>
+          <ul class="list-group list-group-flush" id="vehicles_plan_list">
+            <li class="list-group-item" onclick="car_selected('0')">
+              <div class="car-block">
+                <div class="car-image">
+                  <img class="img-fluid" src="../cab-booking/assets/dzire.jpg">
+                </div>
+                <div class="car-details">
+                  <div class="car-name">4 Seater</div>
+                  <div class="car-sub-name" id="car-sub-name-0">Sedan, 100Km for 5Hrs.</div>
+                </div>
+                <div class="car-fare" id="car-far-0">
+                  500
+                </div>
+              </div>
+            </li>
+
+            <li class="list-group-item" onclick="car_selected('1')">
+              <div class="car-block">
+                <div class="car-image">
+                  <img class="img-fluid" src="../cab-booking/assets/innova.jpg">
+                </div>
+                <div class="car-details">
+                  <div class="car-name">6 Seater</div>
+                  <div class="car-sub-name" id="car-sub-name-1">SUV, 100Km for 5Hrs.</div>
+                </div>
+                <div class="car-fare" id="car-far-1">
+                  1000
+                </div>
+              </div>
+            </li>
+
+
+            <li class="list-group-item" onclick="car_selected('2')">
+              <div class="car-block">
+                <div class="car-image">
+                  <img class="img-fluid" src="../cab-booking/assets/traversa.webp">
+                </div>
+                <div class="car-details">
+                  <div class="car-name">7/8 Seater</div>
+                  <div class="car-sub-name" id="car-sub-name-2">SUV, 100Km for 5Hrs.</div>
+                </div>
+                <div class="car-fare" id="car-far-2">
+                  5000
+                </div>
+              </div>
+            </li>
+
+
+            <li class="list-group-item" onclick="car_selected('3')">
+              <div class="car-block">
+                <div class="car-image">
+                  <img class="img-fluid" src="../cab-booking/assets/force_traveller.png">
+                </div>
+                <div class="car-details">
+                  <div class="car-name">12 Seater</div>
+                  <div class="car-sub-name" id="car-sub-name-3">Tempo Traveller, 100Km for 5Hrs.</div>
+                </div>
+                <div class="car-fare" id="car-far-3">
+                  5000
+                </div>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+
+      <div id="car_details_layout" style="display: none;">
+        <div id="gap-s"></div>
+        <div class="input-group" id="name_input_layout">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="name_label">Car Number</span>
+          </div>
+          <input type="text" id="car_number" class="form-control" placeholder="Enter Car Number" aria-label="name_label"
+            aria-describedby="name_label">
+        </div>
+
+
+        <div style="height: 1vh;"></div>
+        <div style="height: 1vh;"></div>
+
+        <label class="form-label" for="customFile">Upload Car RC Document</label>
+        <input type="file" class="form-control" id="car_rc" />
+        <div>
+          <div id="submit_profile" onclick="register_car_number()">SUBMIT CAR NUMBER</div>
+        </div>
+      </div>
+
+
+      <div id="connect_driver_account_layout" style="display: none;">
+        <div id="gap-s"></div>
+        <div class="input-group" id="name_input_layout">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="name_label">Driver</span>
+          </div>
+          <input type="text" id="driver_name" class="form-control" placeholder="Driver Name" aria-label="name_label"
+            aria-describedby="name_label">
+        </div>
+
+        <div style="height: 1vh;"></div>
+
+        <div class="input-group" id="name_input_layout">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="name_label">Mobile : +91</span>
+          </div>
+          <input type="tel" id="driver_mobile" class="form-control" placeholder="Mobile Number" aria-label="name_label"
+            aria-describedby="name_label">
+        </div>
+
+        <div style="height: 1vh;"></div>
+        <div class="input-group" id="name_input_layout">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="name_label">Email</span>
+          </div>
+          <input type="email" id="driver_email" class="form-control" placeholder="Email Address" aria-label="name_label"
+            aria-describedby="name_label">
+        </div>
+
+        <div style="height: 1vh;"></div>
+        <div style="height: 1vh;"></div>
+
+        <label class="form-label" for="customFile">Upload Aadhar Card Photo</label>
+        <input type="file" class="form-control" id="driver_aadhar" />
+
+
+        <div style="height: 1vh;"></div>
+        <div style="height: 1vh;"></div>
+
+        <label class="form-label" for="customFile">Upload Driving License Photo</label>
+        <input type="file" class="form-control" id="driver_license" />
+
+        <div>
+          <div id="submit_profile" onclick="driver_details_added_by_owner()">LINK DRIVER TO CAR</div>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div id="confirmation_layout" style="display: none;">
+      <div id="header_label">
+        <p>Congratulations!<br>Your Account is Created.</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <div class="liheader"><img class="img-fluid" src="assets/steering-wheel.svg">Add Cars to Account</div>
+        </li>
+        <li class="list-group-item">
+          <div class="liheader"><img class="img-fluid" src="assets/shopping-bag.svg">Get Ride Bookings</div>
+        </li>
+        <li class="list-group-item">
+          <div class="liheader"><img class="img-fluid" src="assets/rupee (1).svg">Earnings in Bank Account</div>
+        </li>
+      </ul>
+      <div>
+        <div id="go_to_account_page" onclick="go_to_account()">GO TO MY ACCOUNT<i style="float: right;line-height: 6vh;"
+            class="fas fa-arrow-right"></i></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="height: 3vh;"></div>
+  <div id="design_footer">
+    <img class="img-fluid" style="height: 20vh;" src="assets/df9833d9ea32e96ce51d417cdcb878b9.gif">
+  </div>
+  <div id="footer">
+    <div id="support_layout"><i class="fab fa-whatsapp"></i>&nbsp;&nbsp;किसी और लोकेशन से पिक उप के लिए Whatsapp करे।
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="loader_layout" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document" style="width: fit-content;margin-left: 40vw;">
+      <div class="modal-content">
+        <div class="modal-body" style="text-align: center;">
+          <div class="spinner-border text-warning" style="text-align: center;" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="main_menu" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="main_menu_title">Partner Menu</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="modal-body">
+          <ul class="list-group list-group-flush">
+            <li id="menuitem_partnerguide" class="list-group-item">Partner Home</li>
+            <li id="menuitem_partnerguide" class="list-group-item">Partner Guide</li>
+            <li id="menuitem_faqs" class="list-group-item">F.A.Q.s</li>
+            <li id="menuitem_contactus" class="list-group-item">Contact Us</li>
+            <li id="menuitem_tnc" class="list-group-item">Terms & Conditions</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal bs-example-modal-lg" id="plan_summary_modal" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document" style="margin: 0px!important;" id="plan_summary_modal_holder">
+      <div class="modal-content" style="height: 85vh;margin-top: 15vh;">
+
+        <div id="summary_holder" style="padding:30px;">
+
+          <div style="margin-bottom: 4vh;font-size: larger;font-weight: bold;">
+            Booking Details / बुकिंग डिटेल्स
+          </div>
+          <div class="car-block" style="margin-bottom: 2vh;">
+            <div style="height: 11vh;">
+              <img class="img-fluid" id="summary_car_image" src="../cab-booking/assets/dzire.jpg">
+            </div>
+            <div class="" style="margin-left: 20px;">
+              <div class="" style="padding-right: 15px;font-size: larger;font-weight: bold;" id="summary_seat_label">4
+                Seater</div>
+              <div class="car-sub-name" style="width:55vw!important;padding-right: 20px!important;"
+                id="summary_plan_overview">Maruti Suzuki Dzire, 25Kms for
+                1.5Hours.</div>
+            </div>
+          </div>
+
+          <div>
+            <div style=" margin-bottom: 0px;font-size: large;color: darkgray;">
+              पिक उप का स्टेशन / Pick up Station
+            </div>
+            <div id="pickup" style="margin-bottom: 2px;font-size: 1.3rem;">
+              Falna, Rajasthan.
+            </div>
+          </div>
+
+          <div id="seperator"></div>
+
+          <div>
+            <div style=" margin-bottom: 0px;font-size: large;color: darkgray;">
+              पिक उप की तरीक / Pick Up Date
+            </div>
+            <div id="pickup_date" style=" margin-bottom: 2px;font-size: 1.3rem;">
+              02, May 2022 [Tuesday]
+            </div>
+          </div>
+
+          <div id="seperator"></div>
+
+
+          <div>
+            <div style=" margin-bottom: 0px;font-size: large;color: darkgray;">
+              पिक उप का समय / Pick Up Time
+            </div>
+            <div id="pickup_time" style=" margin-bottom: 2px;font-size: 1.3rem;">
+              लेट नाईट, 01:00 AM
+            </div>
+          </div>
+
+          <div id="seperator"></div>
+
+          <div>
+            <div style=" margin-bottom: 0px;font-size: large;color: darkgray;">
+              बुकिंग किराया / Booking Fare
+            </div>
+            <div style=" margin-bottom: 0px;font-size: 2rem;line-height: 1;display: inline-flex;">
+              <div id="summary_payable_booking_amount">₹ </div>
+              <div style="font-size:small;margin-top: 5px;" onclick="scroll_to_bottom_of_summary()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor"
+                  class="bi bi-info-circle" viewBox="0 0 16 16">
+                  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                  <path
+                    d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                </svg>
+                Fare Breakup
+              </div>
+
+            </div>
+          </div>
+
+          <div id="seperator"></div>
+
+          <div>
+            <div style=" margin-bottom: 0px;font-size: large;color: darkgray;">
+              बुकिंग प्लान / Booking Plan
+            </div>
+
+            <div class="card" style="margin-top: 5px;">
+
+              <div class="card-body">
+                <h5 class="card-title" id="summary_plan_name"><b>900Kms for 56Hours
+
+                  </b></h5>
+                <p class="card-text" id="summary_plan_description">Get an AC / Non AC Cab with Driver for a Journey of
+                  56Hours covering 900Kms.
+                  Allowance Charges may apply in case of Night Stay to be paid to the driver.</p>
+              </div>
+              <p style="font-weight: bold;margin-bottom: 0px;font-size: large;padding-left: 1.25rem;">Terms</p>
+              <ul class="list-group list-group-flush" id="package_terms">
+              </ul>
+            </div>
+
+            <div style="font-size: 1.3rem;">
+
+            </div>
+            <div style="font-size: medium;line-height: 1.1;color: #888888;">
+
+            </div>
+          </div>
+
+
+          <div>
+            <div style="margin-top:25px;margin-bottom: 2px;font-size: large;color: darkgray;">
+              कूपन लगाइये / Apply Coupon
+            </div>
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Coupon Code"
+                aria-label="Amount (to the nearest dollar)">
+              <div class="input-group-append">
+                <span class="input-group-text">Apply Coupon</span>
+              </div>
+            </div>
+          </div>
+
+
+          <div>
+            <div style="margin-bottom: 0px;font-size: large;color: darkgray;margin-top:25px;">
+              किराया ब्रेकअप / Fare Breakup
+            </div>
+            <ul class="list-group list-group-flush" id="cost_breakup_list">
+              <li class="list-group-item">
+                <div>Base Fare</div>
+                <div id="breakup_base_fare">₹ 0.00</div>
+              </li>
+              <li class="list-group-item" id="discount_li">
+                <div>Discount</div>
+                <div id="breakup_discount">₹ 0.00</div>
+              </li>
+              <li class="list-group-item">
+                <div>Allowance</div>
+                <div id="breakup_allowance">₹ 0.00</div>
+              </li>
+              <li class="list-group-item">
+                <div>Total Fare Amount</div>
+                <div id="breakup_pd_payable_fare">₹ 0.00</div>
+              </li>
+              <li class="list-group-item">
+                <div>Booking Amount</div>
+                <div id="breakup_booking_payable_amount" style="font-weight:bold">₹ 0.00</div>
+              </li>
+
+
+              <li class="list-group-item" id="booking_amount_note_label"
+                style="text-align: center!important;color: #e1b109;font-size: small;">
+
+              </li>
+            </ul>
+          </div>
+
+          <button type="button" onclick="summary_page_action()" style="margin-top: 10px;"
+            id="summary_page_action_button" class="btn btn-default summary_page_action_button_inactive">BOOK
+            NOW</button>
+
+
+          <div style="text-align: center!important;color: gray;font-size: small;">
+            I agree to the terms & conditions by clicking on BOOK NOW button.
+          </div>
+          <div style="height:10vh;"></div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+  
+  <div class="modal bs-example-modal-lg" id="login_modal" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document" style="margin: 0px!important;" id="plan_summary_modal_holder">
+      <div class="modal-content" style="background-color: #f0f0f0!important;height: 85vh;margin-top: 15vh;">
+
+        <div id="summary_holder" style="padding:30px;">
+
+          <div id="login_modal_header" style="margin-bottom: 4vh;font-size: larger;font-weight: bold;">
+            Login Now / बुकिंग डिटेल्स
+          </div>
+
+          <form id="login_form">
+            <div class="form-group">
+              <label id="login_page_label" for="exampleInputEmail1">Mobile Number/ मोबाइल नंबर </label>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">+91</span>
+                </div>
+                <input name="number" type="number" class="form-control" style="padding: 25px;" id="login_mobile_number_input" aria-describedby="emailHelp" placeholder="Enter 10 Digit Number">
+              </div>
+              
+              <small id="emailHelp" style="display: none;"  class="form-text text-muted">We'll never share your details with anyone else.</small>
+            </div>
+
+
+            <div class="form-group register_variable" id="name_layout">
+              <label for="exampleInputEmail1" >Name / नाम* </label>
+              <div class="input-group mb-3">
+                <input name="name" type="text" class="form-control" style="padding: 25px;" id="login_name" aria-describedby="emailHelp" placeholder="FullName / अपना  नाम लिखिए ">
+              </div>
+              <small id="emailHelp" style="display: none;"  class="form-text text-muted">We'll never share your details with anyone else.</small>
+            </div>
+
+
+            <div class="form-group" id="city_layout" style="display: none;">
+              <label for="exampleInputEmail1">City / शहर </label>
+              <div class="input-group mb-3">
+                <select title="Select City / शहर " class="selectpicker" data-live-search="true" id="register_city_select" disabled>
+                 
+                  
+                </select>  
+              </div>
+              
+            </div>
+
+            <div class="form-group register_variable" id="email_layout">
+              <label for="exampleInputEmail1" >Email / ईमेल </label>
+              <div class="input-group mb-3">
+                <input name="email" autocomplete="on" type="email" class="form-control" style="padding: 25px;" id="login_email_input" aria-describedby="emailHelp" placeholder="Email / अपना ईमेल लिखिए ">
+              </div>
+              <small id="emailHelp" style="display: none;"  class="form-text text-muted">We'll never share your details with anyone else.</small>
+            </div>
+
+            <div class="form-group register_variable" id="email_layout">
+              <label for="exampleInputEmail1" >Pincode / पिनकोड*  </label>
+              <div class="input-group mb-3">
+                <input name="pincode" autocomplete="on" type="number" class="form-control" style="padding: 25px;" id="login_email_input" aria-describedby="emailHelp" placeholder="Pincode / अपना पिनकोड लिखिए ">
+              </div>
+              <small id="emailHelp" style="display: none;"  class="form-text text-muted">We'll never share your details with anyone else.</small>
+            </div>
+
+            <div class="form-group" style="display: none;" id="region_layout">
+              <label for="exampleInputEmail1" >Area / एरिया*  </label>
+              <div class="input-group mb-3">
+                <input name="area" type="text" class="form-control" style="padding: 25px;" id="area_view"  disabled>
+              </div>
+              <small id="emailHelp" style="display: none;"  class="form-text text-muted">We'll never share your details with anyone else.</small>
+            </div>
+
+
+            <div class="form-group" style="display: none;" id="otp_layout">
+              <label for="exampleInputEmail1" style="display: none;">Verify with OTP</label>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">OTP</span>
+                </div>
+                <input type="number" class="form-control" style="padding: 25px;" id="login_otp_input" aria-describedby="emailHelp" placeholder="Enter OTP sent to Phone">
+              </div>
+              <small id="emailHelp" style="display: none;"  class="form-text text-muted">We'll never share your details with anyone else.</small>
+            </div>
+          </form>
+          <div id="seperator"></div>
+
+          <div style="text-align: center!important;color: gray;font-size: smaller;">
+            I agree to the <a href="">T&C</a> by clicking on button.
+          </div>
+          <button type="button" onclick="login_now()" style="margin-top: 10px;"
+            id="login_page_action_button" class="btn btn-default summary_page_action_button_active">SEND OTP
+          </button>
+
+
+          <div style="height:10vh;"></div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="list_view_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true" data-backdrop="static" data-keyboard="false" >
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" style="font-size: 1.5rem!important;padding: 10px;" id="list_view_modal_title"></h5>
+          
+        </div>
+
+        <div class="modal-body">
+          <ul class="list-group list-group-flush" id="list_view_modal_list">
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <script>
+    
+    
+    var element = document.getElementById("summary_holder");
+    element.addEventListener('scroll', function (event) {
+      var element = event.target;
+      //console.log(element.scrollHeight - element.scrollTop - element.clientHeight);
+      if (element.scrollHeight - element.scrollTop - element.clientHeight < 150) {
+        $("#summary_page_action_button").removeClass("summary_page_action_button_inactive")
+        $("#summary_page_action_button").addClass("summary_page_action_button_active");
+      }
+    });
+  </script>
+</body>
+
+</html>

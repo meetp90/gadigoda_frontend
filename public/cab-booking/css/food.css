@@ -1,0 +1,128 @@
+
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+body {
+    width: 100vw;
+    font-family: Poppins;
+    background-color: white;
+}
+
+#gap {
+    height: 5vh;
+}
+
+#gap-s {
+    height: 3vh;
+}
+
+#header_trainSelection_trainSelection {
+    width: 100vw;
+    height: 9vh;
+    color: black;
+}
+
+#header_trainSelection #backmenu {
+    height: 9vh;
+    width: 10vh;
+    display: none;
+    text-align: center;
+}
+
+#header_trainSelection #backmenu i{
+    color: black;
+    line-height: 9vh;
+    width: 10vh;
+    font-size: x-large;
+} 
+
+#header_trainSelection #menu {
+    height: 9vh;
+    float: right;
+    text-align: center;
+}
+
+#header_trainSelection #logo_holder {
+    height: 9vh;
+    line-height: 9vh;
+    display: -webkit-inline-box;
+    width: 70vw;
+    text-align: center;
+}
+
+#brandname {
+    line-height: 9vh;
+    font-size: larger;
+    padding-left: 7px;
+}
+
+#header_trainSelection #logo_holder img {
+    height: 3vh;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    margin-left: 5vw;
+}
+
+#header_trainSelection #menu i {
+    color: black;
+    line-height: 9vh;
+    width: 10vh;
+    font-size: x-large;
+}
+
+#main-title_trainSelection{
+    margin-left: 30px;
+    font-size: x-large;
+    margin-top: 12%;
+}
+#question-1_trainSelection{
+    margin-top: 16%;
+    font-size: large;
+    margin-left: 30px;
+}
+#inputPNR_trainSelection{
+    margin-left: 30px;
+    width: 85%;
+    padding: 8px;
+}
+#OR_trainSelection{
+    margin-top: 10%;
+    margin-bottom: 10%;
+    text-align: center;
+    font-size: larger;
+}
+#question-2_trainSelection{
+    margin-top: 16%;
+    font-size: large;
+    margin-left: 30px;
+}
+#inputTrain-number_trainSelection{
+    margin-left: 30px;
+    width: 85%;
+    padding: 8px;
+}
+#question-3_trainSelection{
+    margin-top: 16%;
+    font-size: large;
+    margin-left: 30px;
+}
+#inputBoardingStn_trainSelection{
+    margin-left: 30px;
+    width: 85%;
+    padding: 8px;
+}
+#submitButton_trainFetch_trainSelection{
+    width: 70%;
+    margin-left: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 10%;
+    background-color: black;
+    color: white;
+}

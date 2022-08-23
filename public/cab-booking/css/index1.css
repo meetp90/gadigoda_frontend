@@ -1,0 +1,269 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    font-family: Poppins;
+}
+
+#header {
+    width: 100vw;
+    height: 9vh;
+}
+
+#header #menu {
+    height: 9vh;
+    float: right;
+    text-align: center;
+}
+
+#header #logo_holder {
+    height: 9vh;
+    line-height: 9vh;
+    display: -webkit-inline-box;
+    width: 70vw;
+    text-align: center;
+}
+
+
+#brandname {
+    line-height: 9vh;
+    font-size: larger;
+    padding-left: 7px;
+}
+
+#header #logo_holder img {
+    height: 5vh;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    margin-left: 24px;
+
+}
+
+#header #menu i {
+    color: black;
+    line-height: 9vh;
+    width: 10vh;
+    font-size: x-large;
+}
+
+
+#content_holder {
+    padding-bottom: 100px;
+}
+
+.title{
+    margin-left: 24px;
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.title p{
+    margin: 0px;
+}
+
+#content_holder #call_to_action {
+    height: 5.5vh;
+    width: 70vw;
+    margin-right: 15vw;
+    margin-left: 15vw;
+    border-radius: 39px;
+    color: white;
+    background: black;
+    line-height: 5.5vh;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+#footer {
+    position: fixed;
+    background: black;
+    display: inline-flex;
+    color: #FFF;
+    bottom: 0;
+    padding: 20px;
+    font-size: 1.2rem;
+    width: 100vw;
+    text-align: center;
+}
+
+#main_menu .modal-dialog .modal-content{
+    background: #FFCD02;
+    background-color: #FFCD02;
+}
+
+#main_menu .modal-dialog .modal-content .modal-body ul{
+    background-color: #FFCD02;
+    background: #FFCD02;
+}
+
+#main_menu .modal-dialog .modal-content .modal-body ul li{
+    background-color: #FFCD02;
+    background: #FFCD02;
+    font-weight: bold;
+    font-size: large;
+}
+
+#main_menu_title{
+    font-size: x-large;
+    font-weight: 600;
+}
+
+.comm-ml{
+    margin-left: 24px;
+}
+
+.mt{
+    margin-top: 10px;
+}
+
+.mt-2{
+    margin-top: 20px;
+}
+
+.mt-4{
+    margin-top: 40px;
+}
+
+.text-tiny{
+    font-size: 0.7rem;
+}
+
+.package-container {
+    position: relative;
+    margin-top: 10px;
+    width: 190px;
+    height: 245px;
+    background-color: #F1F1F1;
+    border-radius: 14px;
+    overflow: hidden;
+
+}
+
+.package-container .img-container{
+    position: relative;
+}
+
+.package-container .img-container .rate {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #F1F1F1;
+    font-size: 0.6rem;
+    padding: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    font-weight: 800;
+    border-top-left-radius: 6px;
+}
+
+.package-container img {
+    width: 190px;
+    height: 105px;
+}
+
+.package-container .title {
+    margin: 2px;
+    margin-left: 4px;
+    margin-bottom: 10px;
+    font-size: 0.8rem;
+    text-align: left;
+    font-weight: 600;
+}
+
+.package-container .price {
+    color: #12447B;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-left: 4px;
+}
+
+.package-container .price span {
+    color: #000000;
+    font-size: 1.1rem;
+    text-decoration: line-through;
+    font-weight: 300;
+    margin-left: 4px;
+}
+
+.package-container .desc {
+    color: #000000;
+    font-size: 0.6rem;
+    margin-left: 8px;
+    margin-right: 8px;
+    height: 40px;
+    overflow: hidden; 
+    text-overflow: ellipsis;
+}
+
+.package-container .action {
+    margin-left: 8px;
+    color: #000000;
+    font-size: 1.0rem;
+    font-weight: 600;
+    margin-top: 10px;
+    text-decoration: underline;
+}
+
+.list-container {
+    width: 100vw;
+    overflow: scroll;
+}
+
+.list-h {
+    width: fit-content;
+    display: flex;
+}
+
+.option-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 12px;
+    margin-bottom: 40px;
+}
+
+.options {
+    width: 100px;
+    height: 120px;
+    flex-grow: 1;
+    background-color: #FFC700;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 12px;
+}
+
+.options .icon {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+    margin: 12px;
+}
+
+.justify-evenly {
+    justify-content: space-evenly;
+}
+.startloc--droploc{
+    font-weight: 600;
+     
+    font-size: 1.1rem;
+}
+.date{
+    margin-left:auto;
+    margin-right: auto;
+}
+.card--content{
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    justify-content: center;
+    align-items: center;
+    
+}
+ 

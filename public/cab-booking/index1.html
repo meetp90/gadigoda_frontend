@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="theme-color" content="#fecb10" />
+    <link rel="icon" type="image/svg+xml" href="assets/sports-car.png" />
+    <meta
+      name="description"
+      content="Gadigoda is an easy way to book cabs online. Get Taxis from way Stations of Tier 2 & 3 Locations of India. We provide mobility solutions to connect last mile rail to roads in Rural / Semi Urban Locations Of India. Rail"
+    />
+    <meta
+      name="keywords"
+      content="Rajasthan,Gujarat,Cab Booking,Taxi Booking"
+    />
+    <meta name="author" content="Batman." />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../cab-booking/css/index1.css" />
+    <title>Gadigoda - Rail to Roads.</title>
+  </head>
+
+  <body>
+    <div id="header">
+      <div id="logo_holder">
+        <img class="img-fluid" src="../cab-booking/assets/sports-car.svg" />
+        <div id="brandname">Gadigoda.com</div>
+      </div>
+      <div id="menu">
+        <i onclick="call_main_menu()" class="fas fa-bars"></i>
+      </div>
+    </div>
+
+    <!-- ? CONTENT STARTS HERE -->
+    <div id="content_holder">
+      <!-- <div id="image_holder">
+      <img class="img-fluid" src="https://gadigoda-dfc26.web.app/customer/assets/ezgif.com-gif-maker%20(4).gif">
+    </div> -->
+
+      <div class="title">
+        <p>Hello प्रवासियों!</p>
+        <p class="small">दिए गए बटन्स से चुने।</p>
+      </div>
+
+      <!-- PACKAGE HEADER -->
+      <div class="title mt-4">
+        <p class="small">Special Packages ></p>
+        <p class="text-tiny">A family and pocket friendly packages</p>
+      </div>
+
+      <!-- PACKAGE ITEM -->
+     
+
+      <div class="list-container">
+        <div class="list-h">
+          <!-- <div class="package-container comm-ml">
+            <div class="img-container">
+              <img
+                src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/99/ae/7f/images-14-largejpg.jpg?w=600&h=400&s=1"
+              />
+              <div class="rate">4.6</div>
+            </div>
+            <div class="card--content">
+              <div class="startloc--droploc">Mumbai → Pune</div>
+              <div class="date">Date:- 07/08/2022</div>
+              <div class="price"><span>₹11,000</span> ₹7,000</div>
+            </div>
+            <div class="action">View More →</div>
+          </div> -->
+        </div>
+      </div>
+
+      <!-- Options -->
+      <div class="list-container mt-4">
+        <div class="option-list justify-evenly">
+          <div onclick="access_partner_account()" class="options">
+            <img src="./assets/ic_ride.png" class="icon" />
+            <h6>Ride</h6>
+          </div>
+
+          <div class="options">
+            <img src="./assets/ic_food.png" class="icon" />
+            <h6>Food</h6>
+          </div>
+
+          <div class="options">
+            <img src="./assets/ic_accessories.png" class="icon" />
+            <h6>Accessories</h6>
+          </div>
+
+          <div class="options">
+            <img src="assets/ic_hotel.png" class="icon" />
+            <h6>Hotel</h6>
+          </div>
+
+          <div class="options">
+            <img src="./assets/ic_running_status.png" class="icon" />
+            <h6>Train Status</h6>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div id="call_to_action" onclick="access_partner_account()">BOOK A RIDE</div>
+    <div id="gap"></div>
+    <div id="gap"></div>
+    <div id="gap"></div> -->
+    </div>
+    <!-- ? CONTENT STARTS HERE -->
+
+    <div id="footer">किसी और लोकेशन से पिक अप के लिए Whatsapp करें |</div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="main_menu"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="main_menu_title">Main Menu</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body">
+            <ul class="list-group list-group-flush">
+              <li id="menuitem_login" class="list-group-item">
+                Login / Register
+              </li>
+              <li id="menuitem_account" class="list-group-item">My Account</li>
+              <li id="menuitem_fares" class="list-group-item">
+                Fares & Pricing
+              </li>
+              <li
+                id="menuitem_partner"
+                class="list-group-item"
+                onclick="become_a_partner_click()"
+              >
+                Become An Partner
+              </li>
+              <li id="menuitem_faqs" class="list-group-item">F.A.Q.s</li>
+              <li id="menuitem_contactus" class="list-group-item">
+                Contact Us
+              </li>
+              <li id="menuitem_tnc" class="list-group-item">
+                Terms & Conditions
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../cab-booking/js/index.js"></script>
+  </body>
+</html>

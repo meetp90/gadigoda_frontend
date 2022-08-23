@@ -1,0 +1,565 @@
+::-webkit-scrollbar {
+    width: 0;
+    /* Remove scrollbar space */
+    background: transparent;
+    /* Optional: just make scrollbar invisible */
+}
+
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+body {
+    width: 100vw;
+    font-family: Poppins;
+}
+
+#gap {
+    height: 5vh;
+}
+
+#gap-s {
+    height: 3vh;
+}
+
+#header {
+    width: 100vw;
+    height: 9vh;
+}
+
+
+#submit_otp {
+    height: 6vh;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    font-size: large;
+    background: #fecb10;
+    float: right;
+    line-height: 6vh;
+    padding-right: 25px;
+    padding-left: 25px;
+    margin-right: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+#submit_number {
+    height: 6vh;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    font-size: large;
+    background: #fecb10;
+    float: right;
+    line-height: 6vh;
+    padding-right: 25px;
+    padding-left: 25px;
+    margin-right: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+#submit_profile {
+    height: 6vh;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    font-size: large;
+    background: #fecb10;
+    float: right;
+    line-height: 6vh;
+    padding-right: 25px;
+    padding-left: 25px;
+    margin-right: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+#confirmation_layout ul {
+    margin-left: 25px;
+    margin-right: 35px;
+}
+
+#select_car_model ul {
+    margin-left: 25px;
+    margin-right: 35px;
+}
+
+#confirmation_layout ul li .liheader img {
+    max-width: 9vw;
+    height: auto;
+    margin-right: 10px;
+    margin-left: -10px;
+}
+
+#confirmation_layout ul li .liheader {
+    font-size: large;
+    line-height: 1.2;
+}
+
+#go_to_account_page {
+    height: 6vh;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    font-size: large;
+    background: #fecb10;
+    line-height: 6vh;
+    padding-right: 30px;
+    padding-left: 25px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-right: 25px;
+    margin-left: 25px;
+}
+
+
+
+#mobile_number_input_layout {
+    margin-left: 25px;
+    width: 90vw;
+}
+
+#account_details_layout {
+    margin-left: 25px;
+    width: 90vw;
+}
+
+#time_selection_list_layout {
+    margin-left: 25px;
+    width: 90vw;
+}
+
+#connect_driver_account_layout {
+    margin-left: 25px;
+    width: 90vw;
+}
+
+#car_details_layout {
+    margin-left: 25px;
+    width: 90vw;
+}
+
+
+#account_details_layout .input-group {
+    height: 7vh;
+    font-size: large;
+    line-height: 7vh;
+    color: black;
+}
+
+#account_details_layout input {
+    height: 7vh;
+    font-size: large;
+    line-height: 7vh;
+    color: black;
+}
+
+#country_code {
+    height: 7vh;
+    font-size: larger;
+    line-height: 7vh;
+    color: black;
+}
+
+#mobile_number {
+    height: 7vh;
+    font-size: larger;
+    line-height: 7vh;
+    color: black;
+}
+
+#content_holder #new_account_layout #header_label {
+    padding-left: 25px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: black;
+    line-height: 1.2;
+}
+
+#content_holder #confirmation_layout #header_label {
+    padding-left: 25px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: black;
+    line-height: 1.2;
+}
+
+#content_holder #new_account_layout #header_label p {
+    margin-bottom: 0px !important;
+}
+
+#account_type_layout {
+    margin-right: 25px;
+    margin-left: 25px;
+}
+
+#account_type_layout ul li {
+    font-size: larger;
+}
+
+#station_selection ul li {
+    font-size: larger;
+    margin-left: 25px;
+    margin-right: 10vw;
+}
+
+#new_account_sub_label {
+    font-size: large;
+    color: black;
+    padding-right: 10px;
+}
+
+#content_holder #otp_number_layout #header_label {
+    padding-left: 25px;
+    font-size: x-large;
+    font-weight: bold;
+    color: black;
+    line-height: 1.2;
+}
+
+#otp_input_layout {
+    margin-left: 25px;
+    width: 90vw;
+}
+
+#otp_label {
+    height: 7vh;
+    font-size: larger;
+    line-height: 7vh;
+    color: black;
+}
+
+#otp {
+    height: 7vh;
+    font-size: larger;
+    line-height: 7vh;
+    color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+#header #backmenu {
+    height: 9vh;
+    width: 10vh;
+    display: none;
+    text-align: center;
+}
+
+#header #backmenu i {
+    color: black;
+    line-height: 9vh;
+    width: 10vh;
+    font-size: x-large;
+}
+
+#header #menu {
+    height: 9vh;
+    float: right;
+    text-align: center;
+}
+
+#header #logo_holder {
+    height: 9vh;
+    line-height: 9vh;
+    display: -webkit-inline-box;
+    width: 70vw;
+    text-align: center;
+}
+
+
+#brandname {
+    line-height: 9vh;
+    font-size: larger;
+    padding-left: 7px;
+}
+
+#header #logo_holder img {
+    height: 5vh;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    margin-left: 5vw;
+
+}
+
+#header #menu i {
+    color: black;
+    line-height: 9vh;
+    width: 10vh;
+    font-size: x-large;
+}
+
+
+#content_holder {
+    min-height: 60vh;
+}
+
+#content_holder #mobile_number_layout #header_label {
+    padding-left: 25px;
+    font-size: xx-large;
+    font-weight: bold;
+    color: black;
+    line-height: 1.2;
+}
+
+
+#content_holder #call_to_action {
+    height: 5.5vh;
+    width: 70vw;
+    margin-right: 15vw;
+    margin-left: 15vw;
+    border-radius: 39px;
+    color: white;
+    background: black;
+    line-height: 5.5vh;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+#support_layout {
+    color: white;
+    line-height: 1;
+    width: 100vw;
+    padding-top: 13px;
+    text-align: center;
+    font-size: large;
+}
+
+#support_layout i {
+    font-size: larger;
+}
+
+#design_footer {
+    height: 20vh;
+    text-align: center;
+}
+
+#footer {
+    height: 10vh;
+    width: 100vw;
+    background: black;
+    display: inline-flex;
+    text-align: center;
+}
+
+#footer #lhs {
+    height: 48vh;
+    width: 45vw;
+    background: black;
+}
+
+
+#footer #rhs {
+    height: 48vh;
+    width: 55vw;
+    background: black;
+    overflow-y: scroll;
+}
+
+#footer #rhs ul {
+    padding-left: 10px;
+    padding-top: 10px;
+    height: 45vh;
+    background-color: black;
+    background: black;
+}
+
+#footer #rhs ul li {
+    background-color: black;
+    background: black;
+    color: white;
+    font-size: small;
+    padding: 0.5rem 1.25rem;
+}
+
+#footer #rhs ul li :hover {
+    color: #FFFFFF;
+}
+
+#footer #lhs #footername {
+    font-size: larger;
+    padding-left: 15px;
+    padding-top: 15px;
+    color: white;
+}
+
+#footer #lhs #description {
+    font-size: x-small;
+    padding-left: 15px;
+    color: white;
+}
+
+#main_menu .modal-dialog .modal-content {
+    background: #FFFFFF;
+    background-color: #FFFFFF;
+}
+
+#main_menu .modal-dialog .modal-content .modal-body ul {
+    background-color: #FFFFFF;
+    background: #FFFFFF;
+}
+
+#main_menu .modal-dialog .modal-content .modal-body ul li {
+    background-color: #FFFFFF;
+    background: #FFFFFF;
+    font-weight: bold;
+    font-size: large;
+}
+
+#main_menu_title {
+    font-size: x-large;
+    font-weight: 600;
+}
+
+.car-block {
+    display: inline-flex;
+}
+
+.car-image img {
+    width: 40vw;
+}
+
+.car-details {
+    width: 35vw;
+    padding-left: 20px;
+}
+
+.list-group-horizontal .selected {
+    background: lightgoldenrodyellow;
+}
+
+.car-sub-name {
+    width: 30vw;
+    padding-right: 5px;
+    font-size: small;
+}
+
+.car-name {
+    width: 30vw;
+    font-size: large;
+}
+
+.car-fare {
+    width: 35vw;
+    font-size: medium;
+    text-align: center;
+    font-weight: bold;
+}
+
+.car-details .car-name {
+    font-weight: bold;
+}
+
+#plans_holder {
+    margin-bottom: 15px;
+}
+
+.list-group-horizontal li {
+    text-align: center;
+}
+
+.plan-header {
+    width: max-content;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    padding-bottom: 2px;
+    font-weight: bold;
+}
+
+.plan-subheader {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: large;
+}
+
+#plan_summary_modal .modal-dialog {
+    transform: translate3d(0, 100vh, 0);
+}
+
+.dropdown {
+    width: -webkit-fill-available!important;
+}
+
+
+.bootstrap-select{
+    width: -webkit-fill-available!important;
+}
+
+#plan_summary_modal .modal-dialog {
+    transform: translate3d(0, 0, 0);
+}
+
+#summary_holder {
+    height: 85vh;
+    overflow-y: scroll;
+}
+
+#selected_vehicle_img {
+    margin-top: -10vh;
+    width: 70vw;
+    margin-left: 15vw;
+}
+
+#seperator {
+    height: 1px;
+    width: 80vw;
+    background: gainsboro;
+    margin-top: 1.5vh;
+    margin-bottom: 2vh;
+}
+
+#package_terms li{
+    color: gray;
+}
+
+#cost_breakup_list li{
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+.summary_page_action_button_inactive 
+{
+    width: -webkit-fill-available;
+    background: #f0f0f0;
+    color: grey;
+    padding: 14px;
+}
+
+.register_variable{
+    display: none;
+}
+#summary_page_action_button{
+    margin-bottom: 10px;
+}
+
+#login_page_action_button{
+    background: black!important;
+    color: #FFCD02!important;
+}
+
+.summary_page_action_button_active{
+    width: -webkit-fill-available;
+    background: black;
+    color: #FFCD02;
+    padding: 14px;
+}
+
+#logo{
+ background-color: #00FFFFFF!important;
+}
+
+.dropdown-menu{
+    transform: none!important;
+}
+
+.inner ul{
+    min-width: fit-content!important;
+}

@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <meta name="theme-color" content="#fecb10">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="../cab-booking/css/onboarding.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.2/moment.min.js"></script>
+  <title>Gadigoda - Partner Onboarding</title>
+</head>
+
+<body>
+
+  <div id="header">
+    <div id="backmenu">
+      <i class="fas fa-arrow-left"></i>
+    </div>
+    <div id="logo_holder">
+      <img class="img-fluid" src="../cab-booking/assets/sports-car.svg">
+      <div id="brandname">Gadigoda.com</div>
+    </div>
+    <div id="menu">
+      <i onclick="call_main_menu()" class="fas fa-bars"></i>
+    </div>
+  </div>
+
+  <div id="content_holder">
+    <div id="gap"></div>
+    <div id="mobile_number_layout" style="display: none;">
+      <div id="header_label">
+        <p>Enter<br>Mobile Number</p>
+      </div>
+
+      <div class="input-group" id="mobile_number_input_layout">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="country_code">+91</span>
+        </div>
+        <input type="tel" id="mobile_number" maxlength="10" class="form-control" placeholder="10 Digit Mobile Number"
+          aria-label="mobile_number" aria-describedby="country_code">
+      </div>
+
+      <div>
+        <div id="submit_number" onclick="submit_mobile_number()">SEND OTP 2</div>
+      </div>
+    </div>
+
+    <div id="otp_number_layout" style="display: none;">
+      <div id="header_label">
+        <p>Verify<br>Mobile Number</p>
+      </div>
+
+      <div class="input-group" id="otp_input_layout">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="otp_label">OTP</span>
+        </div>
+        <input type="tel" id="otp" class="form-control" maxlength="6" placeholder="Enter 6 Digit OTP"
+          aria-label="mobile_number" aria-describedby="country_code">
+      </div>
+
+      <div>
+        <div id="submit_otp" onclick="submit_otp()">CONFIRM OTP</div>
+      </div>
+    </div>
+
+    <div id="new_account_layout">
+      <div id="header_label">
+        <p id="new_account_label" >पिक उप का स्टेशन चुने |</p>
+        <div id="new_account_sub_label" >Rail to Road / Road to Rail.</div>
+      </div>
+
+      <div id="station_selection" >
+        <div id="gap-s"></div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" onclick="station_selected('Falna, Rajasthan')">Falna, Rajasthan</li>
+          <li class="list-group-item" onclick="station_selected('Abu Road, Rajasthan')">Abu Road, Rajasthan</li>
+          <li class="list-group-item" onclick="station_selected('Pindwada, Rajasthan')">Pindwada, Rajasthan</li>
+          <li class="list-group-item" onclick="station_selected('Jawai Bandh, Rajasthan')">Jawai Bandh, Rajasthan</li>
+          <li class="list-group-item" onclick="station_selected('Rani, Rajasthan')">Rani, Rajasthan</li>
+          <li class="list-group-item" onclick="station_selected('Someshwar, Rajasthan')">Someshwar, Rajasthan</li>
+          <li class="list-group-item" onclick="station_selected('Marwar Jn, Rajasthan')">Marwar Jn, Rajasthan</li>
+          <li class="list-group-item" onclick="station_selected('Luni, Rajasthan')">Luni, Rajasthan</li>
+          <li class="list-group-item" onclick="station_selected('Balotra, Rajasthan')">Balotra, Rajasthan</li>
+          <li class="list-group-item" onclick="station_selected('Nathudwara, Rajasthan')">Nathudwara, Rajasthan</li>
+          <li class="list-group-item" onclick="station_selected('Ajmer, Rajasthan')">Ajmer, Rajasthan</li>
+          <li class="list-group-item" onclick="station_selected('Other')" style="font-weight: bold;">Other [ Add New
+            Station]</li>
+        </ul>
+      </div>
+
+      <div id="account_type_layout" style="display: none;" >
+        <div id="gap-s"></div>
+        <ul class="list-group list-group-flush" id="select-station-type">
+          <li class="list-group-item" onclick="select_station_pickup()">
+            <div style="display: inline-flex;">
+                <i class="fa-solid fa-location-pin"></i>
+                <div>स्टेशन से पिक उप करे</div>
+                <div>&nbsp;&nbsp;&nbsp;></div>              
+            </div>
+          </li>
+          <li class="list-group-item" onclick="select_station_pickup()">स्टेशन पर ड्रॉप करे  &nbsp;&nbsp;&nbsp;  ></li>
+        </ul>
+      </div>
+
+
+      <div id="account_details_layout" style="display: none;">
+        <div id="gap-s"></div>
+        <div style="display: none;">
+
+          <div class="input-group" id="name_input_layout">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="name_label">Name</span>
+            </div>
+            <input type="text" id="name" class="form-control" placeholder="Enter Full Name" aria-label="name_label"
+              aria-describedby="name_label">
+          </div>
+          <div style="height: 1vh;"></div>
+          <div class="input-group" id="name_input_layout">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="name_label">Email</span>
+            </div>
+            <input type="email" id="email" class="form-control" placeholder="Enter Email Address" aria-label="name_label"
+              aria-describedby="name_label">
+          </div>
+  
+          <div style="height: 1vh;"></div>
+          <div class="input-group" style="display: none;" id="name_input_layout">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="aadhar_label">Aadhar</span>
+            </div>
+            <input type="text" id="aadhar" class="form-control" placeholder="Enter Aadhar Number"
+              aria-label="aadhar_label" aria-describedby="aadhar_label">
+          </div>
+  
+          <div style="height: 1vh;"></div>
+          <div style="height: 1vh;"></div>
+  
+          <label class="form-label" for="customFile">Upload Aadhar Card Photo</label>
+          <input type="file" class="form-control" id="customFile" />
+  
+          <div>
+            <div id="submit_profile" onclick="profile_submitted()">ADD CAR DETAILS</div>
+          </div>
+  
+        </div>
+        <ul class="list-group list-group-flush" id="date_selection_list">
+         
+        </ul>
+      </div>
+
+      <div id="time_selection_list_layout" style="display: none;">
+        <div id="gap-s"></div>
+      
+        <ul class="list-group list-group-flush" id="time_selection_list">
+         
+        </ul>
+      </div>
+      
+
+      <div id="select_car_model" style="display: none;">
+        <div id="gap-s"></div>
+        <div id="plans_holder">
+          <ul class="list-group list-group-horizontal" style="width: 80vw;overflow-x: scroll;">
+            <li class="list-group-item">
+              <p class="plan-header">2 hrs</p>
+              <p>50 Kms</p>
+            </li>
+            <li class="list-group-item">
+              <p class="plan-header">5 hrs</p>
+              <p>100 Kms</p>
+            </li>
+            <li class="list-group-item">
+              <p class="plan-header">1 Day</p>
+              <p>300 Kms</p>
+            </li>
+            <li class="list-group-item">
+              <p class="plan-header">2 Days</p>
+              <p>600 Kms</p>
+            </li>
+          </ul>
+        </div>
+        <div id="car_holder" style="display: none;">
+          <div id="plan_Selected_label" style="padding-left: 30px;
+          font-size: larger;
+          font-weight: bold;
+          margin-bottom: 10px;">Select Plan</div>
+          <ul class="list-group list-group-flush" >
+            <li class="list-group-item" onclick="car_selected('0')">
+              <div class="car-block">
+                <div class="car-image">
+                  <img class="img-fluid" src="../cab-booking/assets/dzire.jpg">
+                </div>
+                <div class="car-details">
+                  <div class="car-name">4 Seater</div>
+                  <div class="car-sub-name" id="car-sub-name-0">Sedan, 100Km for 5Hrs.</div>
+                </div>
+                <div class="car-fare" id="car-far-0">
+                  500
+                </div>
+              </div>
+            </li>
+  
+            <li class="list-group-item" onclick="car_selected('1')">
+              <div class="car-block">
+                <div class="car-image">
+                  <img class="img-fluid" src="../cab-booking/assets/innova.jpg">
+                </div>
+                <div class="car-details">
+                  <div class="car-name">6 Seater</div>
+                  <div class="car-sub-name"  id="car-sub-name-1">SUV, 100Km for 5Hrs.</div>
+                </div>
+                <div class="car-fare"  id="car-far-1">
+                  1000
+                </div>
+              </div>
+            </li>
+  
+  
+            <li class="list-group-item" onclick="car_selected('2')">
+              <div class="car-block">
+                <div class="car-image">
+                  <img class="img-fluid" src="../cab-booking/assets/traversa.webp">
+                </div>
+                <div class="car-details">
+                  <div class="car-name">7/8 Seater</div>
+                  <div class="car-sub-name" id="car-sub-name-2">SUV, 100Km for 5Hrs.</div>
+                </div>
+                <div class="car-fare"  id="car-far-2">
+                  5000
+                </div>
+              </div>
+            </li>
+  
+            
+            <li class="list-group-item" onclick="car_selected('3')">
+              <div class="car-block">
+                <div class="car-image">
+                  <img class="img-fluid" src="../cab-booking/assets/force_traveller.png">
+                </div>
+                <div class="car-details">
+                  <div class="car-name">12 Seater</div>
+                  <div class="car-sub-name" id="car-sub-name-3">Tempo Traveller, 100Km for 5Hrs.</div>
+                </div>
+                <div class="car-fare"  id="car-far-3">
+                  5000
+                </div>
+              </div>
+            </li>
+  
+          </ul>
+        </div>
+        
+
+
+      </div>
+
+      <div id="car_details_layout" style="display: none;">
+        <div id="gap-s"></div>
+        <div class="input-group" id="name_input_layout">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="name_label">Car Number</span>
+          </div>
+          <input type="text" id="car_number" class="form-control" placeholder="Enter Car Number" aria-label="name_label"
+            aria-describedby="name_label">
+        </div>
+
+
+        <div style="height: 1vh;"></div>
+        <div style="height: 1vh;"></div>
+
+        <label class="form-label" for="customFile">Upload Car RC Document</label>
+        <input type="file" class="form-control" id="car_rc" />
+        <div>
+          <div id="submit_profile" onclick="register_car_number()">SUBMIT CAR NUMBER</div>
+        </div>
+      </div>
+
+
+      <div id="connect_driver_account_layout" style="display: none;">
+        <div id="gap-s"></div>
+        <div class="input-group" id="name_input_layout">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="name_label">Driver</span>
+          </div>
+          <input type="text" id="driver_name" class="form-control" placeholder="Driver Name" aria-label="name_label"
+            aria-describedby="name_label">
+        </div>
+
+        <div style="height: 1vh;"></div>
+
+        <div class="input-group" id="name_input_layout">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="name_label">Mobile : +91</span>
+          </div>
+          <input type="tel" id="driver_mobile" class="form-control" placeholder="Mobile Number" aria-label="name_label"
+            aria-describedby="name_label">
+        </div>
+
+        <div style="height: 1vh;"></div>
+        <div class="input-group" id="name_input_layout">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="name_label">Email</span>
+          </div>
+          <input type="email" id="driver_email" class="form-control" placeholder="Email Address" aria-label="name_label"
+            aria-describedby="name_label">
+        </div>
+
+        <div style="height: 1vh;"></div>
+        <div style="height: 1vh;"></div>
+
+        <label class="form-label" for="customFile">Upload Aadhar Card Photo</label>
+        <input type="file" class="form-control" id="driver_aadhar" />
+
+
+        <div style="height: 1vh;"></div>
+        <div style="height: 1vh;"></div>
+
+        <label class="form-label" for="customFile">Upload Driving License Photo</label>
+        <input type="file" class="form-control" id="driver_license" />
+
+        <div>
+          <div id="submit_profile" onclick="driver_details_added_by_owner()">LINK DRIVER TO CAR</div>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div id="confirmation_layout" style="display: none;">
+      <div id="header_label">
+        <p>Congratulations!<br>Your Account is Created.</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <div class="liheader"><img class="img-fluid" src="assets/steering-wheel.svg">Add Cars to Account</div>
+        </li>
+        <li class="list-group-item">
+          <div class="liheader"><img class="img-fluid" src="assets/shopping-bag.svg">Get Ride Bookings</div>
+        </li>
+        <li class="list-group-item">
+          <div class="liheader"><img class="img-fluid" src="assets/rupee (1).svg">Earnings in Bank Account</div>
+        </li>
+      </ul>
+      <div>
+        <div id="go_to_account_page" onclick="go_to_account()">GO TO MY ACCOUNT<i style="float: right;line-height: 6vh;"
+            class="fas fa-arrow-right"></i></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="height: 3vh;"></div>
+  <div id="design_footer">
+    <img class="img-fluid" style="height: 20vh;" src="assets/df9833d9ea32e96ce51d417cdcb878b9.gif">
+  </div>
+  <div id="footer">
+    <div id="support_layout"><i class="fab fa-whatsapp"></i>&nbsp;&nbsp;किसी और लोकेशन से पिक उप के लिए Whatsapp करे। </div>
+  </div>
+
+
+
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="main_menu" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="main_menu_title">Partner Menu</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="modal-body">
+          <ul class="list-group list-group-flush">
+            <li id="menuitem_partnerguide" class="list-group-item">Partner Home</li>
+            <li id="menuitem_partnerguide" class="list-group-item">Partner Guide</li>
+            <li id="menuitem_faqs" class="list-group-item">F.A.Q.s</li>
+            <li id="menuitem_contactus" class="list-group-item">Contact Us</li>
+            <li id="menuitem_tnc" class="list-group-item">Terms & Conditions</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="recaptcha-container"></div>
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+  </script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
+  <!-- Add additional services that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-auth.js"></script>
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-analytics.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+      apiKey: "AIzaSyAtVJv9Xbn98D7vuQoAOTB2cSQp5gRvG1c",
+      authDomain: "gadigoda-7cc06.firebaseapp.com",
+      projectId: "gadigoda-7cc06",
+      storageBucket: "gadigoda-7cc06.appspot.com",
+      messagingSenderId: "455963401289",
+      appId: "1:455963401289:web:eda6ee8200f262fe0fb398",
+      measurementId: "G-CQ7R2RBNEN"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+
+    window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
+      "recaptcha-container", {
+        size: "normal",
+        callback: function (response) {
+          submit_mobile_number();
+        }
+      }
+    );
+
+
+    function phoneSignIn(number) {
+      console.log('phonesignin', number);
+      const phoneNumber = '+91' + number;
+      console.log(window.recaptchaVerifier);
+      const appVerifier = window.recaptchaVerifier;
+      // console.log(error);
+
+      $("#mobile_number_layout").fadeOut("def", function () {
+        $("#otp_number_layout").fadeIn("slow");
+      });
+      // firebase.auth()
+      //   .signInWithPhoneNumber(phoneNumber, appVerifier)
+      //   .then((confirmationResult) => {
+
+      //     console.log('SMS Sent', phoneNumber, ConfirmationResult);
+      //     window.confirmationResult = confirmationResult;
+
+
+      //   }).catch((error) => {
+      //     console.error('SMS Sending Failed', error);
+      //     $("#mobile_number_layout").fadeOut("def", function () {
+      //       $("#otp_number_layout").fadeIn("slow");
+      //     });
+      //   });
+    }
+
+    function submitPhoneNumberAuthCode(code) {
+      // console.log(error);
+      $("#otp_number_layout").fadeOut("def", function () {
+        $("#new_account_layout").fadeIn("slow");
+        $('#station_selection').show();
+        $('#new_account_sub_label').text('Select Bus/ Railway Station');
+      });
+      // We are using the test code we created before
+      // var code = document.getElementById("code").value;
+      // console.log('OTP submitted', code);
+      // window.confirmationResult.confirm(code)
+      //   .then(function (result) {
+      //     var user = result.user;
+      //     console.log(user);
+      //     $("#otp_number_layout").fadeOut("def", function () {
+      //       $("#new_account_layout").fadeIn("slow");
+      //       $('#station_selection').show();
+      //       $('#new_account_sub_label').text('Select Bus/ Railway Station');
+      //     });
+      //   })
+      //   .catch(function (error) {
+      //     console.log(error); $("#otp_number_layout").fadeOut("def", function () {
+      //       $("#new_account_layout").fadeIn("slow");
+      //       $('#station_selection').show();
+      //       $('#new_account_sub_label').text('Select Bus/ Railway Station');
+      //     });
+      //   });
+    }
+  </script>
+
+  <script src="../cab-booking/js/index.js"></script>
+  <script src="../cab-booking/js/onboarding.js"></script>
+</body>
+
+</html>

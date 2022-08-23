@@ -1,0 +1,159 @@
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+
+body {
+    width: 100vw;
+    font-family: Poppins;
+    background-color: #F36969;
+}
+
+#gap {
+    height: 5vh;
+}
+
+#gap-s {
+    height: 3vh;
+}
+
+#header {
+    width: 100vw;
+    height: 9vh;
+    background-color: #1c1c1c;
+    color: white;
+}
+
+#header #backmenu {
+    height: 9vh;
+    width: 10vh;
+    display: none;
+    text-align: center;
+}
+
+#header #backmenu i{
+    color: black;
+    line-height: 9vh;
+    width: 10vh;
+    font-size: x-large;
+} 
+
+#header #menu {
+    height: 9vh;
+    float: right;
+    text-align: center;
+}
+
+#header #logo_holder {
+    height: 9vh;
+    line-height: 9vh;
+    display: -webkit-inline-box;
+    width: 70vw;
+    text-align: center;
+}
+
+
+#brandname {
+    line-height: 9vh;
+    font-size: larger;
+    padding-left: 7px;
+}
+
+#header #logo_holder img {
+    height: 5vh;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    margin-left: 5vw;
+}
+
+#header #menu i {
+    color: black;
+    line-height: 9vh;
+    width: 10vh;
+    font-size: x-large;
+}
+.container{
+    background-color: white;
+    height: 35vw;
+    width: 35vw;
+    padding-top: 30px;
+    margin-top: 40px;
+    text-align: center;
+    border-radius: 20px;
+}
+.caution_img{
+    height: 10vw;
+    align-items: center;
+}
+.message{
+    padding-top: 15px;
+    padding-bottom: 20px;
+}
+.payment{
+    color: grey;
+    font-size: small;
+    padding-bottom: 40px;
+}
+.icon{
+    height: 1.5vw;
+}
+.try{
+    display: flex;
+    padding-top: 50px;
+    margin-left: 12vw;
+}
+.again{
+    padding-left: 10px;
+}
+
+
+
+
+@media (max-width: 600px) {
+    #header #logo_holder img {
+        height: 3vh;
+        margin-top: 2vh;
+        margin-bottom: 2vh;
+        margin-left: 5vw;
+    }
+
+    .container{
+        background-color: white;
+        padding-top: 30px;
+        margin-top: 60px;
+        margin-left: 30px;
+        min-height: 90vw;
+        min-width: 83vw;
+        border-radius: 20px;
+    }
+    .caution_img{
+        height: 20vw;
+        align-items: center;
+    }
+    .message{
+        padding-top: 15px;
+        padding-bottom: 20px;
+    }
+    .payment{
+        color: grey;
+        font-size: small;
+        padding-bottom: 40px;
+    }
+    .icon{
+        height: 5vw;
+    }
+    .try{
+        display: flex;
+        padding-top: 50px;
+        margin-left: 22vw;
+    }
+    .again{
+        padding-left: 10px;
+        font-size: small;
+    }
+}

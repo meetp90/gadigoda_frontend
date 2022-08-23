@@ -1,0 +1,161 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    font-family: Poppins;
+    background: #fecb10;
+}
+
+#header {
+    width: 100vw;
+    height: 9vh;
+}
+
+#header #menu {
+    height: 9vh;
+    float: right;
+    text-align: center;
+}
+
+#header #logo_holder {
+    height: 9vh;
+    line-height: 9vh;
+    display: -webkit-inline-box;
+    width: 70vw;
+    text-align: center;
+}
+
+
+#brandname {
+    line-height: 9vh;
+    font-size: larger;
+    padding-left: 7px;
+}
+
+#header #logo_holder img {
+    height: 5vh;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    margin-left: 5vw;
+
+}
+
+#header #menu i {
+    color: black;
+    line-height: 9vh;
+    width: 10vh;
+    font-size: x-large;
+}
+
+
+#content_holder {
+    height: 43vh;
+}
+
+#content_holder #image_holder {
+    text-align: center;
+}
+
+
+#content_holder #image_holder img {
+    height: 27vh;
+}
+
+#content_holder #gap {
+    height: 4vh;
+}
+
+
+#content_holder #call_to_action {
+    height: 5.5vh;
+    width: 60vw;
+    margin-right: 20vw;
+    margin-left: 20vw;
+    border-radius: 39px;
+    color: white;
+    background: black;
+    line-height: 5.5vh;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+#footer {
+    height: 48vh;
+    background: black;
+    display: inline-flex;
+}
+
+#footer #lhs {
+    height: 48vh;
+    width: 45vw;
+    background: black;
+}
+
+
+#footer #rhs {
+    height: 48vh;
+    width: 55vw;
+    background: black;
+    overflow-y: scroll;
+}
+
+#footer #rhs ul{
+    padding-left: 10px;
+    padding-top: 10px;
+    height: 45vh;
+    background-color: black;
+    background: black;
+}
+
+#footer #rhs ul li{
+    background-color: black;
+    background: black;
+    color: white;
+    font-size: small;padding: 0.5rem 1.25rem;
+}
+
+#footer #rhs ul li :hover{
+    color: #fecb10;
+}
+
+#footer #lhs #footername {
+    font-size: larger;
+    padding-left: 15px;
+    padding-top: 15px;
+    color: white;
+}
+
+#footer #lhs #description{
+    font-size: x-small;
+    padding-left: 15px;
+    color: white;
+}
+
+#main_menu .modal-dialog .modal-content{
+    background: #fecb10;
+    background-color: #fecb10;
+}
+#customer_title{
+    margin-left: 10vw;
+    margin-right: 10vw;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+#main_menu .modal-dialog .modal-content .modal-body ul{
+    background-color: #fecb10;
+    background: #fecb10;
+}
+
+#main_menu .modal-dialog .modal-content .modal-body ul li{
+    background-color: #fecb10;
+    background: #fecb10;
+    font-weight: bold;
+    font-size: large;
+}
+
+#main_menu_title{
+    font-size: x-large;
+    font-weight: 600;
+}

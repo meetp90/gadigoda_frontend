@@ -1,0 +1,133 @@
+
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+body {
+    width: 100vw;
+    font-family: Poppins;
+    background-color: #1c1c1c;
+}
+
+#gap {
+    height: 5vh;
+}
+
+#gap-s {
+    height: 3vh;
+}
+
+#header {
+    width: 100vw;
+    height: 9vh;
+    color: white;
+}
+
+#header #backmenu {
+    height: 9vh;
+    width: 10vh;
+    display: none;
+    text-align: center;
+}
+
+#header #backmenu i{
+    color: black;
+    line-height: 9vh;
+    width: 10vh;
+    font-size: x-large;
+} 
+
+#header #menu {
+    height: 9vh;
+    float: right;
+    text-align: center;
+}
+
+#header #logo_holder {
+    height: 9vh;
+    line-height: 9vh;
+    display: -webkit-inline-box;
+    width: 70vw;
+    text-align: center;
+}
+
+#brandname {
+    line-height: 9vh;
+    font-size: larger;
+    padding-left: 7px;
+}
+
+#header #logo_holder img {
+    height: 3vh;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    margin-left: 5vw;
+}
+
+#header #menu i {
+    color: black;
+    line-height: 9vh;
+    width: 10vh;
+    font-size: x-large;
+}
+.profile_img{
+    height: 10vh;
+    margin-left: 35px;
+    margin-top: 35px;
+}
+
+.name{
+    display: flex;
+    color: white;
+}
+.con1{
+    padding-top: 25px;
+    padding-left: 20px;
+
+}
+.user{
+    font-size: x-large;
+    margin-top: 20px;
+}
+
+.info {
+    padding-top: 1px;
+}
+
+a{
+    text-decoration: none !important;
+    color: black;
+}
+
+.container {
+
+    text-align: center;
+    background-color: white;
+    margin-top: 16%;
+    height: 75vh;
+    border-radius: 40px 40px 0px 0px;
+  }
+.container1{
+    text-align: left;
+    text-decoration: none;
+    padding-top: 40px;
+    padding-left: 15px;
+}
+.container2{
+    padding-left: 7rem;
+    padding-right: 14.5rem;
+    padding-top: 5rem;
+    padding-bottom: 1rem;
+    vertical-align: middle;
+    text-align: left;
+}
+.line{
+    width: 98%;
+}
+
+

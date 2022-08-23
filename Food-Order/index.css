@@ -1,0 +1,83 @@
+body {
+    width: 100vw;
+    font-family: Poppins;
+    background-color: white;
+}
+
+.con01{
+    display: flex;
+}
+.img_back{
+    margin-left: 20px;
+    height: 2.2vh;
+    margin-top: 23px;
+}
+#title-order{
+    margin-top: 13px;
+    margin-left: 20px;
+    font-size: x-large;
+}
+.viewitems-button{
+    color: white;
+    background-color: black;
+    width: 85%;
+    margin-left: 30px;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10%
+}
+.img_food{
+    height: 32vh;
+    margin-left: 23px;
+    margin-top: 30px;
+}
+.img_cart{
+    height: 3vh;
+    margin-top: 17px;
+    margin-left: 55%;
+}
+
+#items{
+    font-size: medium;
+    color: #969696;
+    margin-left: 25px;
+    width: 40%;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+#title-thali{
+    margin-top: 13px;
+    margin-left: 25px;
+    font-size: x-large;
+}
+
+.con03{
+    display: flex;
+    background-color: #F4F4F4;
+    width: 28%;
+    border-radius: 100px;
+    margin-left: 80px;
+    margin-top: 10px;
+}
+
+.img-minus{
+    height: 4vh;
+    margin-top: 6px;
+    margin-right: 10px;
+    margin-left: 12px;
+}
+
+.img_plus{
+    margin-left: 15px;
+    height: 5vh;
+}
+
+.con1{
+    display: flex;
+}
+#number{
+    padding-left: 5px;
+    margin-top: 8px;
+    font-size: larger;
+}

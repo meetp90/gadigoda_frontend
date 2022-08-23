@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gadigoda - Rail to Roads.</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.2/moment.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/food.css">
+</head>
+<body>
+
+    <!-- train selection -->
+    <div id="trainSelectionModal">
+        <div id="header_trainSelection">
+            <div id="backmenu_trainSelection">
+              <i class="fas fa-arrow-left"></i>
+            </div>
+            <div id="logo_holder">
+              <img class="img-fluid" src="./assets/sports-car.png">
+              <div id="brandname">Gadigoda.com</div>
+            </div>
+            <div id="menu">
+              <i onclick="call_main_menu()" class="fas fa-bars"></i>
+            </div>
+        </div>
+        <div id="main-title_trainSelection"><b>ट्रैन की जानकारी दीजिए।</b> </div>
+        <div id="question-1_trainSelection">Enter PRN Number</div>
+        <input id="inputPNR_trainSelection" class="bar1" type="number1">
+        <div id="OR_trainSelection">OR</div>
+        <div id="question-2_trainSelection">Enter Train Number/Name </div>
+        <input id="inputTrain-number_trainSelection" class="bar2" type="number1">
+        <div id="question-3_trainSelection">Enter Boarding Station</div>
+        <input id="inputBoardingStn_trainSelection" class="bar3" type="number1">
+        <button id="submitButton_trainFetch_trainSelection" type="submit" onclick="stationSelection()">Next</button>
+    </div>
+
+
+    <!-- train selection ends -->
+    
+    <!-- station selection -->
+
+    <div id="stationSelectionModal">
+        <div id="new_account_layout">
+            <div id="header_label">
+              <p id="new_account_label">पिक उप का स्टेशन चुने |</p>
+              <div id="new_account_sub_label">Rail to Road / Road to Rail.</div>
+            </div>
+      
+            <div id="station_selection">
+              <div id="gap-s"></div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item" onclick="station_selected('Falna, Rajasthan')">Falna, Rajasthan</li>
+                <li class="list-group-item" onclick="station_selected('Abu Road, Rajasthan')">Abu Road, Rajasthan</li>
+                <li class="list-group-item" onclick="station_selected('Pindwada, Rajasthan')">Pindwada, Rajasthan</li>
+                <li class="list-group-item" onclick="station_selected('Jawai Bandh, Rajasthan')">Jawai Bandh, Rajasthan</li>
+                <li class="list-group-item" onclick="station_selected('Rani, Rajasthan')">Rani, Rajasthan</li>
+                <li class="list-group-item" onclick="station_selected('Someshwar, Rajasthan')">Someshwar, Rajasthan</li>
+                <li class="list-group-item" onclick="station_selected('Marwar Jn, Rajasthan')">Marwar Jn, Rajasthan</li>
+                <li class="list-group-item" onclick="station_selected('Luni, Rajasthan')">Luni, Rajasthan</li>
+                <li class="list-group-item" onclick="station_selected('Balotra, Rajasthan')">Balotra, Rajasthan</li>
+                <li class="list-group-item" onclick="station_selected('Nathudwara, Rajasthan')">Nathudwara, Rajasthan</li>
+                <li class="list-group-item" onclick="station_selected('Ajmer, Rajasthan')">Ajmer, Rajasthan</li>
+              </ul>
+            </div>
+            <ul class="list-group list-group-flush" id="date_selection_list">
+            </ul>
+            <div id="time_selection_list_layout" style="display: none;">
+                <div id="gap-s"></div>
+        
+                <ul class="list-group list-group-flush" id="time_selection_list">
+        
+                </ul>
+              </div>
+            <div id="account_details_layout" style="display: none;">
+            <div id="gap-s"></div>
+    </div>
+
+    <!-- station selection ends -->
+</body>
+<script src="./js/food.js"></script>
+</html>
