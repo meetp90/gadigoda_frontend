@@ -1,47 +1,92 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      
-        <meta name="theme-color" content="#fecb10">
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <link rel="stylesheet" href="index.css">
-        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Poppins" rel="stylesheet">
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <meta name="theme-color" content="#fecb10" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins"
+      rel="stylesheet"
+    />
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
-    src="https://code.jquery.com/jquery-3.6.0.min.js"
-    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-    crossorigin="anonymous"
-  ></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"
-  ></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"
-  ></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.2/moment.min.js"></script>
-        <title>Gadigoda - Profile_MobileView</title>
-      </head>
-    <body>
-        <div class="con01">
-            <img class="img_back" src="back.png" onclick="location.href='/FoodBooking-HomeScreen/index.html'">
-            <div id="title-cart"><b>In Cart</b></div>
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.2/moment.min.js"></script>
+    <title>Gadigoda - Profile_MobileView</title>
+  </head>
+  <body>
+    <div class="con01">
+      <img
+        class="img_back"
+        src="back.png"
+        onclick="location.href='/FoodBooking-HomeScreen/index.html'"
+      />
+      <div id="title-cart"><b>In Cart</b></div>
+    </div>
+
+    <div class="cartitems"></div>
+    <div class="cab_bookings">
+      <!-- <div class="car-block">
+      
+          <div class="car-details">
+            <div class="car-image">
+              <img
+                class="img-fluid"
+                src="../public/cab-booking/assets/dzire.jpg"
+              />
+            </div>
+            <div class="carnamecontainer">
+            <div class="car-name">Seater</div>
+            <div class="car-sub-name" id="car-sub-name-0">asdfs</div>
+          </div>
+          <div>
+            <div class="car-fare" id="car-far-0"><b>₹505</b></div>
+            <div><button class="removebtn">REMOVE</button></div>
+          </div>
+          </div>
+      
+
+        <div class="start_end_location">Start Location → End Location</div>
+        <div class="date_and_time">
+          <div class="date">27/05/2022</div>
+          <div class="time"><img class="clock" src="clock.png">22:00 PM</div>
         </div>
-        
-         <div class="cartitems"></div>
-        <button class="checkout-button" onclick="createCart()">Checkout</button>
-        <script src="/Food-Cart/index.js"></script>
-    </body>
-</html>        
+      </div> -->
+    </div>
+    <button class="checkout-button" onclick="createCart()">Checkout</button>
+    <script src="/Food-Cart/index.js"></script>
+  </body>
+</html>

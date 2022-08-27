@@ -4,32 +4,38 @@ body {
     background-color: #F6F6F6;
 }
 
-.con01{
+.con01 {
     display: flex;
 }
-.img_back{
+
+.img_back {
     margin-left: 20px;
     height: 2.2vh;
     margin-top: 23px;
 }
-#title-cart{
+
+#title-cart {
     margin-top: 13px;
     margin-left: 20px;
     font-size: x-large;
 }
-.con1{
+
+.con1 {
     display: flex;
 }
-#list{
+
+#list {
     margin-left: 30px;
     margin-top: 20px;
 }
-.show{
+
+.show {
     margin-left: 30%;
     margin-top: 20px;
 }
-.con2{
-    
+
+.con2 {
+
     background-color: white;
     margin-top: 20px;
     width: 85%;
@@ -37,6 +43,7 @@ body {
     padding: 10px;
     border-radius: 10px;
 }
+
 .con2 {
     display: flex;
     flex-direction: column;
@@ -48,8 +55,9 @@ body {
     padding: 10px;
     border-radius: 10px;
     overflow-wrap: break-word;
-} 
-.con03{
+}
+
+.con03 {
     display: flex;
     background-color: #F4F4F4;
     width: 28%;
@@ -57,6 +65,7 @@ body {
     margin-left: 70%;
     margin-top: 10px;
 }
+
 .btns {
     display: flex;
     flex-direction: column;
@@ -69,6 +78,7 @@ body {
     margin-bottom: 1.3rem;
     justify-content: center;
 }
+
 .minus,
 .plus {
     width: 2rem;
@@ -82,6 +92,7 @@ body {
     vertical-align: middle;
     text-align: center;
 }
+
 .ordernowbtn {
     position: relative;
     right: 0.1rem;
@@ -89,18 +100,20 @@ body {
     background-color: #21940f;
     color: #fff;
     border-radius: 5px;
-    width: 8rem;
+    width: 7rem;
 }
+
 .removebtn {
     position: relative;
     right: 0.1rem;
-    
+
     top: 1.4rem;
     background-color: red;
     color: #fff;
     border-radius: 5px;
-    width: 8rem;
+    width: 7rem;
 }
+
 input {
     height: 2.5rem;
     width: 30%;
@@ -111,11 +124,13 @@ input {
     display: inline-block;
     vertical-align: middle;
 }
+
 .img_food {
     width: 7rem;
     height: 7rem;
 
 }
+
 span {
     cursor: pointer;
 }
@@ -123,28 +138,32 @@ span {
 .combobox {
     position: relative;
     top: 1rem;
-    
+
 
 }
+
 .con7 {
     display: flex;
     flex-direction: row;
     width: 100%;
 }
-.con4{
-    display: flex;
-    margin-left: 10px;
-} 
-.con5{
-    display: flex;
-    margin-left: 10px;
-} 
 
- 
-#price{
+.con4 {
+    display: flex;
+    margin-left: 10px;
+}
+
+.con5 {
+    display: flex;
+    margin-left: 10px;
+}
+
+
+#price {
     color: #2CAF29;
 }
-#mrp{
+
+#mrp {
     text-decoration: line-through;
     color: #969696;
     font-size: smaller;
@@ -152,55 +171,67 @@ span {
     margin-left: 5px;
 }
 
-#items{
+#items {
     font-size: small;
     color: #969696;
     margin-left: 10px;
 }
-.con6{
+
+.con6 {
     display: flex;
 }
-.rating{
+
+.rating {
     display: flex;
 }
-.time{
+
+.time {
     display: flex;
 }
-#number{
+
+#number {
     font-size: smaller;
 }
-#mins{
+
+#mins {
     font-size: smaller;
 }
-.star{
+
+.star {
     height: 1.6vh;
     margin-top: 12px;
     margin-left: 10px;
     margin-right: 4px;
 }
-.clock{
+
+.clock {
     height: 1.6vh;
     margin-top: 3px;
     margin-left: 10px;
     margin-right: 4px;
 }
-.time{
+
+.time {
     margin-left: 40%;
     margin-top: 10px;
 }
-.img-minus{
+
+.img-minus {
     height: 3.5vh;
     margin-top: 4px;
     margin-right: 10px;
     margin-left: 10px;
 }
-.img_plus{
+
+.img_plus {
     margin-left: 10px;
 }
-#number{
+
+#number {
     margin-top: 10px;
 }
-.checkout-button{
+
+.checkout-button {
     color: white;
     background-color: black;
     width: 85%;
@@ -209,7 +240,95 @@ span {
     border-radius: 10px;
     margin-top: 80%
 }
-.cartitems{
-    margin-bottom: 4rem;
-    
+
+.car-block {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    background-color: white;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    border-radius: 10px;
+    overflow-wrap: break-word;
+}
+
+.car-image img {
+    width: 40vw;
+
+}
+
+.removebtncab {
+    position: relative;
+
+    background-color: red;
+    color: #fff;
+    border-radius: 5px;
+    width: 7rem;
+    margin-top: 1rem;
+
+}
+
+.car-details {
+    margin-left: 0;
+    width: 95vw;
+
+    display: flex;
+    flex-direction: row
+}
+
+.cab_price {
+    text-align: center;
+    margin-left: 0;
+    padding: 0
+}
+
+.car-sub-name {
+    width: 30vw;
+    padding-right: 5px;
+    font-size: small;
+}
+
+.car-name {
+    width: 30vw;
+    font-size: large;
+}
+
+.car-fare {
+    width: 35vw;
+    font-size: medium;
+    text-align: center;
+    font-weight: bold;
+    color: #2CAF29;
+}
+
+.car-details .car-name {
+    font-weight: bold;
+}
+
+.carnamecontainer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.start_end_location {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.date_and_time {
+    display: flex;
+    align-items: baseline;
+    padding: 0.1rem
+}
+
+.date_and_time div {
+    width: 100%;
+
 }

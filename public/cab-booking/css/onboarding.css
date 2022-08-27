@@ -485,12 +485,12 @@ body {
 }
 
 .dropdown {
-    width: -webkit-fill-available!important;
+    width: -webkit-fill-available !important;
 }
 
 
-.bootstrap-select{
-    width: -webkit-fill-available!important;
+.bootstrap-select {
+    width: -webkit-fill-available !important;
 }
 
 #plan_summary_modal .modal-dialog {
@@ -516,50 +516,50 @@ body {
     margin-bottom: 2vh;
 }
 
-#package_terms li{
+#package_terms li {
     color: gray;
 }
 
-#cost_breakup_list li{
+#cost_breakup_list li {
     display: inline-flex;
     justify-content: space-between;
 }
 
-.summary_page_action_button_inactive 
-{
+.summary_page_action_button_inactive {
     width: -webkit-fill-available;
     background: #f0f0f0;
     color: grey;
     padding: 14px;
 }
 
-.register_variable{
+.register_variable {
     display: none;
 }
-#summary_page_action_button{
+
+#summary_page_action_button {
     margin-bottom: 10px;
 }
 
-#login_page_action_button{
-    background: black!important;
-    color: #FFCD02!important;
+#login_page_action_button {
+    background: black !important;
+    color: #FFCD02 !important;
 }
 
-.summary_page_action_button_active{
+.summary_page_action_button_active {
     width: -webkit-fill-available;
     background: black;
     color: #FFCD02;
     padding: 14px;
 }
 
-#logo{
- background-color: #00FFFFFF!important;
+#logo {
+    background-color: #00FFFFFF !important;
 }
 
-.dropdown-menu{
-    transform: none!important;
+.dropdown-menu {
+    transform: none !important;
 }
 
-.inner ul{
-    min-width: fit-content!important;
+.inner ul {
+    min-width: fit-content !important;
 }
