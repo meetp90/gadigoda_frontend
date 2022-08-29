@@ -303,7 +303,6 @@ function load_packages() {
   });
 }
 
-// onclick="location.href="../Food-Cart/index.html""
 function populate_vehicles_list(parent_plan_name) {
   var plans = vehicles_received;
   console.log("Plans ---", plans);
@@ -384,7 +383,7 @@ function vehicle_plan_selected(index) {
   console.log("Vehicle Plan Selected", booking);
   if (!isLoggedIn()) {
     storeCabdetailstoLocalStorage(index, booking);
-    // location.href = "/Food-Cart/index.html";
+    location.href = "/Food-Cart/index.html";
     //$("#login_modal").modal();
     // populate_cities();
   } else {

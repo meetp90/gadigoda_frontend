@@ -1,3 +1,4 @@
+var price=0;
 function updatelocalstorage(i, incartcount) {
   var old = localStorage.getItem("cart_item");
   old = old ? JSON.parse(old) : [];
@@ -58,8 +59,10 @@ $(document).ready(function () {
   data = JSON.parse(cart_item);
   if (data) {
     data?.forEach(function (cart_item, i) {
+
       if (cart_item.isDeleted) {
       } else {
+ 
         var htmlcode =
           "<div class='con2'>" +
           '<div class="con7">' +
@@ -137,7 +140,7 @@ $(document).ready(function () {
           "</div>" +
           "</div>" +
           "</div>";
-
+        price = price + parseInt(cart_item.price);
         items.push(htmlcode);
       }
     });
@@ -158,8 +161,7 @@ $(document).ready(function () {
   data = JSON.parse(cab_bookings);
   if (data) {
     data?.forEach(function (cab_bookings, i) {
-      console.log(cab_bookings[i]);
-      if (cart_item.isDeleted) {
+      if (cab_bookings.isDeleted) {
       } else {
         htmlcode_cab =
           '<div class="car-block">' +
@@ -201,14 +203,23 @@ $(document).ready(function () {
           "</div>" +
           "</div>" +
           "</div>";
-
+          console.log("cab booking"+i+"price "+cab_bookings.price )
+          price+=parseInt(cab_bookings.price);
+          
         cab_items.push(htmlcode_cab);
       }
     });
   }
+  
   document.querySelector(".cab_bookings").innerHTML = "";
   $(".cab_bookings").append(cab_items.join(""));
   $(".cab_bookings").show();
+  console.log(price);
+
+
+ var htmlcode_checkout='<button class="checkout-button" onclick="createCart()">'+'<div>Checkout </div><div>₹ '+price+'</div></button>'
+ document.querySelector('.checkout').innerHTML = htmlcode_checkout;
+ $(".checkout").show();  
 });
 
 
@@ -217,7 +228,7 @@ function addingcustdetails() {
   var old = localStorage.getItem("cart_item");
   old = old ? JSON.parse(old) : [];
   var cart = {};
-  const products = [];
+  var products = [];
   var details = new Array(old.length);
 
   for (var i = 0; i < old.length; i++) {
@@ -238,24 +249,37 @@ function addingcustdetails() {
     console.log(products);
   }
 
-  cart.items = products;
+ //storing user details in cart
   cart.user = "Meet";
   cart.coupon = 123456;
   cart.location = "Powai";
   cart.trainDetails = {};
-  console.log(cart);
-  localStorage.setItem("cart", JSON.stringify(cart));
-
+ cart.id='15sfkjl1';
+ 
   //storing the items from local storage cart_cab_item to local storage cart(for cab_bookings)
+ 
   var bookings = [];
   var old = localStorage.getItem("cart_cab_item");
+  var details = new Array(old.length);
   old = old ? JSON.parse(old) : [];
-  bookings = old;
-  console.log(bookings);
-  var cart = localStorage.getItem("cart");
-  cart = cart ? JSON.parse(cart) : [];
-  cart.cab_bookings = bookings;
-
+  for (var i = 0; i < old.length; i++) {
+    details[i] = {
+      type: "",
+      id: "",
+      quantity: "",
+    };
+  }
+  for (var i = 0; i < old.length; i++) {
+    details[i].type = "Cab";
+    details[i].id = old[i].selected_plan.id;
+    details[i].quantity = "1";
+    console.log(details[i]);
+    details.push(details[i]);
+    bookings[i] = details[i];
+    console.log(bookings);
+  }
+  products=products.concat(bookings); 
+  cart.items = products;
   localStorage.setItem("cart", JSON.stringify(cart));
 
   // const cart = {
