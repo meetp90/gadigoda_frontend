@@ -238,8 +238,11 @@ function load_packages() {
         var items = [];
         $.each(received_plans, function (i, package) {
           //console.log(package);
-          if (package.isDeleted == "true") {
-          } else {
+          if (package.special_plan == "true") {
+          }
+          else if (package.special_package == "true") {}
+          else if (package.isDeleted == "true") {}
+           else {
             var li =
               '<li name="' +
               i +
