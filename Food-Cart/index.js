@@ -295,8 +295,10 @@ function addingcustdetails() {
   // }
 }
 function createCart() {
+
   addingcustdetails();
   var cart = localStorage.getItem("cart");
+  console.log(cart)
   $.ajax({
     url: "https://us-central1-gadigoda-dfc26.cloudfunctions.net/createCart",
     method: "POST", //First change type to method here
@@ -312,4 +314,395 @@ function createCart() {
       alert("error");
     },
   });
+  summary_page_action();
+}
+
+
+
+
+//login
+
+
+var user = { loggedIn: false };
+function isLoggedIn() {
+  if (user.loggedIn) {
+    return true;
+  } else return false;
+}
+
+var booking = {};
+var booking_date_set = [];
+var booking_date_object_set = [];
+var booking_time_set = [];
+var booking_time_set_display = [];
+booking.station_is = "Pickup";
+
+function select_station_pickup() {
+  booking.station_is = "Pickup";
+  console.log("Station Selected", booking);
+  $("#account_type_layout").fadeOut("def", function () {
+    $("#station_selection").fadeIn("slow");
+  });
+}
+
+function select_station_destination() {
+  booking.station_is = "Destination";
+  console.log("Station Selected", booking);
+  $("#new_account_label").text("ड्रॉप उप का स्टेशन चुने |");
+  $("#account_type_layout").fadeOut("def", function () {
+    $("#station_selection").fadeIn("slow");
+  });
+}
+
+function register_car_number() {
+  if ($("#car_number").val() == "") {
+    alert("Enter Car Number");
+    $("#car_number").focus();
+  } else {
+    var car = partner_profile.cars[0];
+    car.car_number = $("#car_number").val();
+    partner_profile.cars[0] = car;
+    console.log("Car Number Added", partner_profile);
+    $("#car_details_layout").fadeOut("def", function () {
+      $("#connect_driver_account_layout").fadeIn("slow");
+      $("#new_account_sub_label").text("Enter Car & Driver Details");
+    });
+  }
+}
+
+function profile_submitted() {
+  if (account_details_valid()) {
+    $("#account_details_layout").fadeOut("def", function () {
+      $("#select_car_model").fadeIn("slow");
+      $("#new_account_sub_label").text("Select Car Model");
+    });
+  }
+}
+
+function driver_details_added_by_owner() {
+  if (owner_added_driver_account_details_valid()) {
+    $("#new_account_layout").fadeOut("def", function () {
+      $("#confirmation_layout").fadeIn("slow");
+    });
+  }
+}
+
+function owner_added_driver_account_details_valid() {
+  if ($("#driver_name").val() == "") {
+    alert("Enter Driver Name");
+    $("#driver_name").focus();
+    return false;
+  } else {
+    var car = partner_profile.cars[0];
+    car.driver_name = $("#driver_name").val();
+    car.driver_status = "Not Verified";
+    partner_profile.cars[0] = car;
+    console.log("Driver  Name Added", partner_profile);
+  }
+
+  if ($("#driver_mobile").val().length != 10) {
+    alert("Enter Valid Mobile Number");
+    $("#email").focus();
+    return false;
+  } else {
+    var car = partner_profile.cars[0];
+    car.driver_number = $("#driver_mobile").val();
+    car.driver_mobile_verification = "Not Verified";
+    partner_profile.cars[0] = car;
+    console.log("Driver Number Added", partner_profile);
+  }
+
+  return true;
+}
+
+function account_details_valid() {
+  if ($("#name").val() == "") {
+    alert("Enter Name");
+    $("#name").focus();
+    return false;
+  } else {
+    partner_profile.name = $("#name").val();
+    console.log("Name Added", partner_profile);
+  }
+
+  if ($("#email").val() == "") {
+    alert("Enter Email Address");
+    $("#email").focus();
+    return false;
+  } else {
+    partner_profile.email = $("#email").val();
+    console.log("Email Added", partner_profile);
+  }
+  return true;
+}
+
+function go_to_account() {
+  window.location.href = "../cab-booking/modules/account/index.html";
+
+  //if(partner_profile.type='')
+  {
+  }
+}
+
+function make_payment() {}
+
+//login
+function login_now() {
+  if (otp_sent) {
+    console.log($("#login_otp_input").val().length);
+    if ($("#login_otp_input").val().length == 6) {
+      verifyOTP();
+    } else {
+      alert("Invalid OTP");
+      $("#login_otp_input").focus();
+    }
+  } else if (register_activated) {
+    user.loggedIn = true;
+    var data = $("#login_form")
+      .serializeArray()
+      .reduce(function (obj, item) {
+        obj[item.name] = item.value;
+        return obj;
+      }, {});
+
+    var proceed = true;
+    if (!data.name) {
+      proceed = false;
+      alert("Invalid Name");
+    }
+
+    if (data.pincode.length != 6) {
+      proceed = false;
+      alert("Invalid Pincode");
+    }
+
+    if (user.location_object) {
+      $("#login_modal").modal("hide");
+      populate_summary_view();
+      $("#plan_summary_modal").modal();
+    } else if (proceed) {
+      $("#login_modal").modal("hide");
+      $("#loader_layout").modal();
+      $.ajax({
+        url: "https://api.postalpincode.in/pincode/" + data.pincode,
+        success: function (response) {
+          //console.log(response);
+          $("#loader_layout").modal("hide");
+          var postoffices = [];
+          postoffices = response[0].PostOffice;
+          console.log(postoffices);
+          if (postoffices.length < 2) {
+            user.region = postoffices[0].District;
+            user.state = postoffices[0].State;
+            user.location_object = postoffices[0];
+            $("#area_view").val(
+              postoffices[0].Name + ", " + postoffices[0].District
+            );
+            $("#region_layout").show();
+            $("#login_modal").modal();
+          } else {
+            $("#list_view_modal_title").text(
+              "Select Area / अपना  एरिया सेलेक्ट करे "
+            );
+            var items = [];
+            var ul = document.getElementById("list_view_modal_list");
+            document.getElementById("list_view_modal_list").innerHTML = '';
+            for (var i = 0; i < postoffices.length; i++) {
+              var li = document.createElement("li");
+              li.className = "list-group-item";
+              li.appendChild(
+                document.createTextNode(
+                  postoffices[i].Name + ", " + postoffices[i].District
+                )
+              );
+              ul.appendChild(li);
+            }
+            $("#list_view_modal_list li").click(function () {
+              var index = [$(this).index()];
+              user.region = postoffices[index].District;
+              user.state = postoffices[index].State;
+              user.location_object = postoffices[index];
+              $("#area_view").val(
+                postoffices[index].Name + ", " + postoffices[index].District
+              );
+              $("#region_layout").show();
+              $("#list_view_modal").modal("hide");
+              $("#login_modal").modal();
+            });
+            $("#list_view_modal").modal();
+          }
+
+          if (false) {
+            user.name = data.name;
+            user.number = data.number;
+            user.email = data.email;
+            $("#login_modal").modal("hide");
+            populate_summary_view();
+            $("#plan_summary_modal").modal();
+          }
+        },
+        error: function () {
+          $("#loader_layout").modal("hide");
+          alert("error");
+        },
+      });
+    }
+  } else {
+    if ($("#login_mobile_number_input").val().length == 10) {
+      user.number = $("#login_mobile_number_input").val();
+      sendOTP();
+    } else {
+      alert("Invalid Mobile Number");
+      $("#login_mobile_number_input").focus();
+    }
+  }
+}
+
+var otp_sent = false;
+function sendOTP() {
+  //ajax call
+  var data_packet = {};
+  data_packet.phoneNumber = user.number;
+  $("#login_modal").modal("hide");
+  $("#loader_layout").modal();
+  $.ajax({
+    url: "https://us-central1-gadigoda-dfc26.cloudfunctions.net/sendOTP",
+    method: "POST",
+    data: data_packet,
+    success: function (response) {
+      $("#login_modal").modal();
+      $("#loader_layout").modal("hide");
+      console.log(
+        "https://us-central1-gadigoda-dfc26.cloudfunctions.net/sendOTP",
+        data_packet,
+        response
+      );
+      $("#login_page_label").text(
+        "Verify Mobile Number / मोबाइल नंबर वेरीफाई करे "
+      );
+      $("#otp_layout").show();
+      $("#login_otp_input").focus();
+      otp_sent = true;
+      $("#login_page_action_button").text("VERIFY OTP");
+    },
+    error: function () {
+      alert("error");
+      $("#loader_layout").modal("hide");
+    },
+  });
+}
+
+var register_activated = false;
+function verifyOTP() {
+  var already_a_user = false;
+  var otp = $("#login_otp_input").val();
+  //ajax call
+  if (already_a_user) {
+  } else {
+    otp_sent = false;
+    register_activated = true;
+
+    $("#otp_layout").hide();
+    $("#login_page_action_button").text("PROCEED");
+    $("#login_mobile_number_input").attr("readonly", "readonly");
+    alert("Welcome to Gadigoda / गाडीगोडा में आपका स्वागत है ");
+    $("#login_modal_header").text(
+      "Complete your Profile / अपनी प्रोफाइल पूरी कीजिए "
+    );
+    $(".register_variable").show();
+    $("#login_name").focus();
+  }
+}
+
+var login_cities_populated = false;
+function populate_cities() {
+  if (login_cities_populated) {
+    var items = [];
+    for (var i = 0; i < cities.length; i++) {
+      items.push(
+        '<option name="' +
+          i +
+          '" data-subtext="' +
+          cities[i].state +
+          '">' +
+          cities[i].name +
+          "</option>"
+      );
+    }
+    document.getElementById("register_city_select").innerHTML = "";
+    $("#register_city_select").append(items.join(""));
+    $("#register_city_select").selectpicker();
+    login_cities_populated = true;
+  }
+
+  $("#login_modal").modal();
+}
+
+function check_summary_view_scroll(e) {
+  var elem = $(e.currentTarget);
+  console.log(elem[0].scrollHeight - elem.scrollTop() == elem.outerHeight());
+  if (elem[0].scrollHeight - elem.scrollTop() == elem.outerHeight()) {
+    alert("Hit Bottom");
+    $("#summary_page_action_button").removeClass(
+      "summary_page_action_button_inactive"
+    );
+    $("#summary_page_action_button").addClass(
+      "summary_page_action_button_active"
+    );
+  }
+}
+
+function summary_page_action() {
+  if (
+    $("#summary_page_action_button").hasClass(
+      "summary_page_action_button_inactive"
+    )
+  ) {
+  } else {
+    if (isLoggedIn()) {
+      var options = {
+        key: "rzp_live_WjbZygz4PwOqo3",
+        amount:
+          booking.selected_plan.selected_vehicle_plan.payable_post_discount_booking_amount,
+        name: "Gadigoda.com",
+        reference_id: booking.booking_id,
+        description:
+          "Mobility for Bharat. Payment for Booking ID no #" +
+          booking.booking_id,
+        image:
+          "https://gadigoda-dfc26.web.app/cab-booking/assets/sports-car.svg", // COMPANY LOGO
+        handler: function (response) {
+          console.log(response);
+          //razorpay_payment_id
+        },
+        customer: {
+          name: user.name,
+          contact: user.number,
+          email: user.email,
+        },
+        notify: {
+          sms: true,
+          email: true,
+        },
+        prefill: {
+          name: user.name,
+          email: user.email,
+          contact: user.number,
+        },
+        notes: {
+          address: user.city,
+        },
+        theme: {
+          color: "#FFCD02", // screen color
+        },
+      };
+      //console.log(options);
+      console.log("Moving to Payment", booking);
+      var propay = new Razorpay(options);
+      propay.open();
+    } else {
+      $("#plan_summary_modal").modal("hide");
+      $("#login_modal").modal();
+    }
+  }
 }
