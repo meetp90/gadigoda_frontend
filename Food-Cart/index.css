@@ -30,8 +30,8 @@ body {
 }
 
 .show {
-    margin-left: 30%;
-    margin-top: 20px;
+    /* margin-left: 30%; */
+    /* margin-top: 20px; */
 }
 
 .con2 {
@@ -334,4 +334,245 @@ span {
 .date_and_time div {
     width: 100%;
 
+}
+
+/*login*/
+::-webkit-scrollbar {
+    width: 0;
+    /* Remove scrollbar space */
+    background: transparent;
+    /* Optional: just make scrollbar invisible */
+}
+
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+body {
+    width: 100vw;
+    font-family: Poppins;
+}
+
+#gap {
+    height: 5vh;
+}
+
+#gap-s {
+    height: 3vh;
+}
+
+#header {
+    width: 100vw;
+    height: 9vh;
+}
+
+
+#submit_otp {
+    height: 6vh;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    font-size: large;
+    background: #fecb10;
+    float: right;
+    line-height: 6vh;
+    padding-right: 25px;
+    padding-left: 25px;
+    margin-right: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+#submit_number {
+    height: 6vh;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    font-size: large;
+    background: #fecb10;
+    float: right;
+    line-height: 6vh;
+    padding-right: 25px;
+    padding-left: 25px;
+    margin-right: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+#submit_profile {
+    height: 6vh;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    font-size: large;
+    background: #fecb10;
+    float: right;
+    line-height: 6vh;
+    padding-right: 25px;
+    padding-left: 25px;
+    margin-right: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+#confirmation_layout ul {
+    margin-left: 25px;
+    margin-right: 35px;
+}
+
+#select_car_model ul {
+    margin-left: 25px;
+    margin-right: 35px;
+}
+
+#confirmation_layout ul li .liheader img {
+    max-width: 9vw;
+    height: auto;
+    margin-right: 10px;
+    margin-left: -10px;
+}
+
+#confirmation_layout ul li .liheader {
+    font-size: large;
+    line-height: 1.2;
+}
+
+#go_to_account_page {
+    height: 6vh;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    font-size: large;
+    background: #fecb10;
+    line-height: 6vh;
+    padding-right: 30px;
+    padding-left: 25px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-right: 25px;
+    margin-left: 25px;
+}
+
+
+
+#mobile_number_input_layout {
+    margin-left: 25px;
+    width: 90vw;
+}
+
+#account_details_layout {
+    margin-left: 25px;
+    width: 90vw;
+}
+
+#time_selection_list_layout {
+    margin-left: 25px;
+    width: 90vw;
+}
+
+#connect_driver_account_layout {
+    margin-left: 25px;
+    width: 90vw;
+}
+
+#car_details_layout {
+    margin-left: 25px;
+    width: 90vw;
+}
+
+
+#account_details_layout .input-group {
+    height: 7vh;
+    font-size: large;
+    line-height: 7vh;
+    color: black;
+}
+
+#account_details_layout input {
+    height: 7vh;
+    font-size: large;
+    line-height: 7vh;
+    color: black;
+}
+
+#country_code {
+    height: 7vh;
+    font-size: larger;
+    line-height: 7vh;
+    color: black;
+}
+
+#mobile_number {
+    height: 7vh;
+    font-size: larger;
+    line-height: 7vh;
+    color: black;
+}
+
+#content_holder #new_account_layout #header_label {
+    padding-left: 25px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: black;
+    line-height: 1.2;
+}
+
+#content_holder #confirmation_layout #header_label {
+    padding-left: 25px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: black;
+    line-height: 1.2;
+}
+
+#content_holder #new_account_layout #header_label p {
+    margin-bottom: 0px !important;
+}
+
+#account_type_layout {
+    margin-right: 25px;
+    margin-left: 25px;
+}
+
+#account_type_layout ul li {
+    font-size: larger;
+}
+
+#station_selection ul li {
+    font-size: larger;
+    margin-left: 25px;
+    margin-right: 10vw;
+}
+
+#new_account_sub_label {
+    font-size: large;
+    color: black;
+    padding-right: 10px;
+}
+
+#content_holder #otp_number_layout #header_label {
+    padding-left: 25px;
+    font-size: x-large;
+    font-weight: bold;
+    color: black;
+    line-height: 1.2;
+}
+
+#otp_input_layout {
+    margin-left: 25px;
+    width: 90vw;
+}
+
+#otp_label {
+    height: 7vh;
+    font-size: larger;
+    line-height: 7vh;
+    color: black;
+}
+
+#otp {
+    height: 7vh;
+    font-size: larger;
+    line-height: 7vh;
+    color: black;
+}
+.register_variable {
+    display: none;
 }

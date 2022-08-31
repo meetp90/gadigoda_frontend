@@ -48,6 +48,132 @@
     <title>Gadigoda - Profile_MobileView</title>
   </head>
   <body>
+    <div class="modal bs-example-modal-lg " id="login_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document" style="margin: 0px!important;" id="plan_summary_modal_holder">
+      <div class="modal-content" style="background-color: #f0f0f0!important;height: 95vh;margin-top: 5vh;">
+
+        <div id="summary_holder" style="padding:30px;">
+
+          <div id="login_modal_header" style="margin-bottom: 4vh;font-size: larger;font-weight: bold;">
+            Login Now / बुकिंग डिटेल्स
+          </div>
+
+          <form id="login_form">
+            <div class="form-group">
+              <label id="login_page_label" for="exampleInputEmail1">Mobile Number/ मोबाइल नंबर </label>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">+91</span>
+                </div>
+                <input name="number" type="number" class="form-control" style="padding: 25px;" id="login_mobile_number_input" aria-describedby="emailHelp" placeholder="Enter 10 Digit Number">
+              </div>
+              
+              <small id="emailHelp" style="display: none;"  class="form-text text-muted">We'll never share your details with anyone else.</small>
+            </div>
+
+
+            <div class="form-group register_variable" id="name_layout">
+              <label for="exampleInputEmail1" >Name / नाम* </label>
+              <div class="input-group mb-3">
+                <input name="name" type="text" class="form-control" style="padding: 25px;" id="login_name" aria-describedby="emailHelp" placeholder="FullName / अपना  नाम लिखिए ">
+              </div>
+              <small id="emailHelp" style="display: none;"  class="form-text text-muted">We'll never share your details with anyone else.</small>
+            </div>
+
+
+            <div class="form-group" id="city_layout" style="display: none;">
+              <label for="exampleInputEmail1">City / शहर </label>
+              <div class="input-group mb-3">
+                <select title="Select City / शहर " class="selectpicker" data-live-search="true" id="register_city_select" disabled>
+                 
+                  
+                </select>  
+              </div>
+              
+            </div>
+
+            <div class="form-group register_variable" id="email_layout">
+              <label for="exampleInputEmail1" >Email / ईमेल </label>
+              <div class="input-group mb-3">
+                <input name="email" autocomplete="on" type="email" class="form-control" style="padding: 25px;" id="login_email_input" aria-describedby="emailHelp" placeholder="Email / अपना ईमेल लिखिए ">
+              </div>
+              <small id="emailHelp" style="display: none;"  class="form-text text-muted">We'll never share your details with anyone else.</small>
+            </div>
+
+            <div class="form-group register_variable" id="email_layout">
+              <label for="exampleInputEmail1" >Pincode / पिनकोड*  </label>
+              <div class="input-group mb-3">
+                <input name="pincode" autocomplete="on" type="number" class="form-control" style="padding: 25px;" id="login_email_input" aria-describedby="emailHelp" placeholder="Pincode / अपना पिनकोड लिखिए ">
+              </div>
+              <small id="emailHelp" style="display: none;"  class="form-text text-muted">We'll never share your details with anyone else.</small>
+            </div>
+
+            <div class="form-group" style="display: none;" id="region_layout">
+              <label for="exampleInputEmail1" >Area / एरिया*  </label>
+              <div class="input-group mb-3">
+                <input name="area" type="text" class="form-control" style="padding: 25px;" id="area_view"  disabled>
+              </div>
+              <small id="emailHelp" style="display: none;"  class="form-text text-muted">We'll never share your details with anyone else.</small>
+            </div>
+
+
+            <div class="form-group" style="display: none;" id="otp_layout">
+              <label for="exampleInputEmail1" style="display: none;">Verify with OTP</label>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">OTP</span>
+                </div>
+                <input type="number" class="form-control" style="padding: 25px;" id="login_otp_input" aria-describedby="emailHelp" placeholder="Enter OTP sent to Phone">
+              </div>
+              <small id="emailHelp" style="display: none;"  class="form-text text-muted">We'll never share your details with anyone else.</small>
+            </div>
+          </form>
+          <div id="seperator"></div>
+
+          <div style="text-align: center!important;color: gray;font-size: smaller;">
+            I agree to the <a href="">T&C</a> by clicking on button.
+          </div>
+          <button type="button" onclick="login_now()" style="margin-top: 10px;"
+            id="login_page_action_button" class="btn btn-default summary_page_action_button_active">SEND OTP
+          </button>
+
+
+          <div style="height:10vh;"></div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group register_variable" id="name_layout">
+    <label for="exampleInputEmail1" >Name / नाम* </label>
+    <div class="input-group mb-3">
+      <input name="name" type="text" class="form-control" style="padding: 25px;" id="login_name" aria-describedby="emailHelp" placeholder="FullName / अपना  नाम लिखिए ">
+    </div>
+    <small id="emailHelp" style="display: none;"  class="form-text text-muted">We'll never share your details with anyone else.</small>
+  </div>
+
+  <div class="form-group" style="display: none;" id="region_layout">
+    <label for="exampleInputEmail1" >Area / एरिया*  </label>
+    <div class="input-group mb-3">
+      <input name="area" type="text" class="form-control" style="padding: 25px;" id="area_view"  disabled>
+    </div>
+    <small id="emailHelp" style="display: none;"  class="form-text text-muted">We'll never share your details with anyone else.</small>
+  </div>
+  <div class="modal fade" id="loader_layout" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document" style="width: fit-content;margin-left: 40vw;">
+    <div class="modal-content">
+      <div class="modal-body" style="text-align: center;">
+        <div class="spinner-border text-warning" style="text-align: center;" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
     <div class="con01">
       <img
         class="img_back"
@@ -89,5 +215,8 @@
     <div class="checkout"></div>
     <!-- <button class="checkout-button" onclick="createCart()">Checkout  </button> -->
     <script src="/Food-Cart/index.js"></script>
+    
   </body>
 </html>
+
+

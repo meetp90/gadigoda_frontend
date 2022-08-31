@@ -384,7 +384,7 @@ function vehicle_plan_selected(index) {
   if (!isLoggedIn()) {
     storeCabdetailstoLocalStorage(index, booking);
     location.href = "/Food-Cart/index.html";
-    //$("#login_modal").modal();
+    // $("#login_modal").modal();
     // populate_cities();
   } else {
     booking.customer = user;
