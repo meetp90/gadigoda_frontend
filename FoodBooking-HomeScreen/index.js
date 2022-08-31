@@ -17,6 +17,9 @@ function stringmatch(input, thali_title) {
   return flag;
 }
 
+function call_main_menu() {
+  $("#main_menu").modal("toggle");
+}
 //searchbar
 function searchfood() {
   let input = $("#input").val();

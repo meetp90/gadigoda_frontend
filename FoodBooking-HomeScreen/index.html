@@ -87,7 +87,33 @@
     <button class="viewCart" onClick="cart()">VIEW CART</button>
   </div>
 </div>
-    
+
+
+<div class="modal fade" id="main_menu" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="main_menu_title">Main Menu</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="modal-body">
+          <ul class="list-group list-group-flush">
+            <li id="menuitem_login" class="list-group-item">Login / Register</li>
+            <li id="menuitem_account" class="list-group-item">My Account</li>
+            <li id="menuitem_fares" class="list-group-item">Fares & Pricing</li>
+            <li id="menuitem_partner" class="list-group-item" onclick="become_a_partner_click()">Become An Partner</li>
+            <li id="menuitem_faqs" class="list-group-item">F.A.Q.s</li>
+            <li id="menuitem_contactus" class="list-group-item">Contact Us</li>
+            <li id="menuitem_tnc" class="list-group-item">Terms & Conditions</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
       
 
      

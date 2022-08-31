@@ -356,3 +356,25 @@ input {
     font-family: 'Quicksand', sans-serif;
     font-weight:600;
 }
+
+#main_menu .modal-dialog .modal-content{
+    background: #FFCD02;
+    background-color: #FFCD02;
+}
+
+#main_menu .modal-dialog .modal-content .modal-body ul{
+    background-color: #FFCD02;
+    background: #FFCD02;
+}
+
+#main_menu .modal-dialog .modal-content .modal-body ul li{
+    background-color: #FFCD02;
+    background: #FFCD02;
+    font-weight: bold;
+    font-size: large;
+}
+
+#main_menu_title{
+    font-size: x-large;
+    font-weight: 600;
+}

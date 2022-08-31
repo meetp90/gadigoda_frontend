@@ -1,6 +1,8 @@
 var price=0;
+var cart = {};
 function updatelocalstorage(i, incartcount) {
   var old = localStorage.getItem("cart_item");
+  console.log(old)
   old = old ? JSON.parse(old) : [];
 
   old[i].count = incartcount;
@@ -140,7 +142,7 @@ $(document).ready(function () {
           "</div>" +
           "</div>" +
           "</div>";
-        price = price + parseInt(cart_item.price);
+        price = price + parseInt(cart_item.price*cart_item.count);
         items.push(htmlcode);
       }
     });
@@ -154,7 +156,7 @@ $(document).ready(function () {
 
   //For displaying Cabs in Cart
   var cab_bookings = localStorage.getItem("cart_cab_item");
-  console.log(cab_bookings);
+  //console.log(cab_bookings);
   console.log(cart_item);
   var cab_items = [];
   var htmlcode_cab = "";
@@ -203,7 +205,7 @@ $(document).ready(function () {
           "</div>" +
           "</div>" +
           "</div>";
-          console.log("cab booking"+i+"price "+cab_bookings.price )
+          console.log("cab booking"+  i+"price "+cab_bookings.price )
           price+=parseInt(cab_bookings.price);
           
         cab_items.push(htmlcode_cab);
@@ -223,11 +225,12 @@ $(document).ready(function () {
 });
 
 
+
 function addingcustdetails() {
   //storing the items from local storage cart_item to local storage cart(for products)
   var old = localStorage.getItem("cart_item");
+  console.log(old)
   old = old ? JSON.parse(old) : [];
-  var cart = {};
   var products = [];
   var details = new Array(old.length);
 
@@ -236,25 +239,22 @@ function addingcustdetails() {
       type: "",
       id: "",
       quantity: "",
+      name:""
     };
   }
 
   for (var i = 0; i < old.length; i++) {
-    details[i].type = "Food";
+    details[i].type = old[i].type;
     details[i].id = old[i].id;
     details[i].quantity = old[i].count;
+    details[i].name = old[i].name;
     console.log(details[i]);
     details.push(details[i]);
     products[i] = details[i];
     console.log(products);
-  }
+  } 
 
- //storing user details in cart
-  cart.user = "Meet";
-  cart.coupon = 123456;
-  cart.location = "Powai";
-  cart.trainDetails = {};
- cart.id='15sfkjl1';
+ 
  
   //storing the items from local storage cart_cab_item to local storage cart(for cab_bookings)
  
@@ -262,6 +262,7 @@ function addingcustdetails() {
   var old = localStorage.getItem("cart_cab_item");
   var details = new Array(old.length);
   old = old ? JSON.parse(old) : [];
+  console.log(old)
   for (var i = 0; i < old.length; i++) {
     details[i] = {
       type: "",
@@ -280,6 +281,7 @@ function addingcustdetails() {
   }
   products=products.concat(bookings); 
   cart.items = products;
+  console.log("yeh hai products: ",products)
   localStorage.setItem("cart", JSON.stringify(cart));
 
   // const cart = {
@@ -295,12 +297,19 @@ function addingcustdetails() {
   // }
 }
 function createCart() {
-  addingcustdetails();
-  var cart = localStorage.getItem("cart");
+  //storing user details in cart
+  cart.id="ftb687678";
+  cart.user = "Meet";
+  cart.coupon = 123456;
+  cart.location = "Powai";
+  cart.trainDetails = {};
+
+  cart.user ?  addingcustdetails(): alert("Please login to continue");
+  // var cart = localStorage.getItem("cart");
+  console.log(cart)
   $.ajax({
     url: "https://us-central1-gadigoda-dfc26.cloudfunctions.net/createCart",
     method: "POST", //First change type to method here
-
     data: cart,
     success: function (response) {
       console.log(
